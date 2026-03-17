@@ -45,16 +45,16 @@ def CommentModelAdapter(CommentModel: type) -> CommentModelAdapterT:
 
                 field_description = {
                     "post": (
-                        "связывает модель `blog.models.Comment` "
-                        "с моделью `blog.models.Post`"
+                        "svyazyvaet model `blog.models.Comment` "
+                        "s modelyu `blog.models.Post`"
                     ),
                     "author": (
-                        "задаёт автора комментария, "
-                        "связывая модель `blog.models.Comment` "
-                        "с моделью `blog.models.Post`"
+                        "zadaet authora comment, "
+                        "svyazyvaya model `blog.models.Comment` "
+                        "s modelyu `blog.models.Post`"
                     ),
-                    "text": "задаёт текст комментария",
-                    "created_at": "задаёт дату комментария",
+                    "text": "zadaet text comment",
+                    "created_at": "zadaet datu comment",
                 }
 
             return _AdapterFields

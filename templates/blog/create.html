@@ -2,11 +2,11 @@
 {% load django_bootstrap5 %}
 {% block title %}
   {% if '/edit/' in request.path %}
-    Редактирование публикации
+    Edit Post
   {% elif "/delete/" in request.path %}
-    Удаление публикации
+    Delete Post
   {% else %}
-    Добавление публикации
+    Create Post
   {% endif %}
 {% endblock %}
 {% block content %}
@@ -14,11 +14,11 @@
     <div class="card" style="width: 40rem;">
       <div class="card-header">
         {% if '/edit/' in request.path %}
-          Редактирование публикации
+          Edit Post
         {% elif '/delete/' in request.path %}
-          Удаление публикации
+          Delete Post
         {% else %}
-          Добавление публикации
+          Create Post
         {% endif %}
       </div>
       <div class="card-body">
@@ -33,12 +33,12 @@
                   <img class="border-3 rounded img-fluid img-thumbnail mb-2" src="{{ form.instance.image.url }}">
                 </a>
               {% endif %}
-              <p>{{ form.instance.pub_date|date:"d E Y" }} | {% if form.instance.location and form.instance.location.is_published %}{{ form.instance.location.name }}{% else %}Планета Земля{% endif %}<br>
+              <p>{{ form.instance.pub_date|date:"d E Y" }} | {% if form.instance.location and form.instance.location.is_published %}{{ form.instance.location.name }}{% else %}Planet Earth{% endif %}<br>
               <h3>{{ form.instance.title }}</h3>
               <p>{{ form.instance.text|linebreaksbr }}</p>
             </article>
           {% endif %}
-          {% bootstrap_button button_type="submit" content="Отправить" %}
+          {% bootstrap_button button_type="submit" content="Submit" %}
         </form>
       </div>
     </div>

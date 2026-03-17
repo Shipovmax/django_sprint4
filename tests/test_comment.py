@@ -54,13 +54,13 @@ def test_comment_created_at(comment, CommentModelAdapter):
     assert abs(
         comment.created_at.replace(tzinfo=None) - now_utc
     ) < datetime.timedelta(seconds=1), (
-        "Убедитесь, что при создании комментария ему присваиваются текущие"
-        " дата и время."
+        "Ensure that pri sozdanii comment emu prisvaivayutsya tekushchie"
+        " date i vremya."
     )
 
 
-def create_comment_creation_forms(
-        creation_tester: CreateCommentFormTester,
+def create_comment_create_forms(
+        create_tester: CreateCommentFormTester,
         Form: Type[BaseForm],
         CommentModel: Type[Model],
         CommentModelAdapter: CommentModelAdapterT,
@@ -73,7 +73,7 @@ def create_comment_creation_forms(
     for i in rand_range:
         forms_data.append({"text": f"Test create comment {i} text"})
 
-    forms_to_create = creation_tester.init_create_item_forms(
+    forms_to_create = create_tester.init_create_item_forms(
         Form,
         Model=CommentModel,
         ModelAdapter=CommentModelAdapter,
@@ -81,15 +81,15 @@ def create_comment_creation_forms(
     )
 
     try:
-        creation_tester.test_unlogged_cannot_create(
+        create_tester.test_unlogged_cannot_create(
             form=forms_to_create[0], qs=CommentModel.objects.all()
         )
     except FormValidationException as e:
         raise AssertionError(
-            "Убедитесь, что для валидации"
-            f" {creation_tester.of_which_form} достаточно заполнить следующие"
-            f" поля: {list(forms_to_create[0].data.keys())}. При валидации"
-            f" формы возникли следующие ошибки: {e}"
+            "Ensure that dlya validation"
+            f" {create_tester.of_which_form} dostatochno zapolnit sleduyushchie"
+                f" polya: {list(forms_to_create[0].data.keys())}. Pri validation"
+                f" formy voznikli sleduyushchie errors: {e}"
         )
 
     if return_single_form:
@@ -118,7 +118,7 @@ def test_comment(
     )
 
     # create comments
-    creation_tester = CreateCommentFormTester(
+    create_tester = CreateCommentFormTester(
         a_post_get_response,
         CommentModel,
         user_client,
@@ -129,23 +129,23 @@ def test_comment(
     )
 
     Form: Type[BaseForm] = type(ctx_form)
-    forms_to_create = create_comment_creation_forms(
-        creation_tester, Form, CommentModel, CommentModelAdapter)
+    forms_to_create = create_comment_create_forms(
+        create_tester, Form, CommentModel, CommentModelAdapter)
 
-    response_on_created, created_items = creation_tester.test_create_several(
+    response_on_created, created_items = create_tester.test_create_several(
         forms_to_create[1:], qs=CommentModel.objects.all()
     )
     content = response_on_created.content.decode(encoding="utf8")
-    creation_tester.test_creation_response(content, created_items)
+    create_tester.test_creation_response(content, created_items)
 
     comment_count_repr = f"({len(created_items)})"
 
     index_content = user_client.get("/").content.decode("utf-8")
     if comment_count_repr not in index_content:
         raise AssertionError(
-            "Убедитесь, что на главной странице под постами отображается"
-            " количество комментариев. Число комментариев должно быть указано"
-            " в круглых скобках."
+            "Ensure that on the home page pod postmi is displayed"
+            " kolichestvo kommentariev. Chislo kommentariev dolzhno byt ukazano"
+            " v kruglykh skobkakh."
         )
 
     # check comment count on profile page
@@ -157,9 +157,9 @@ def test_comment(
             url=author_profile_url).content.decode("utf-8"))
     if comment_count_repr not in profile_content:
         raise AssertionError(
-            "Убедитесь, что на странице пользователя под постами отображается"
-            " количество комментариев. Число комментариев должно быть указано"
-            " в круглых скобках."
+            "Ensure that on the user pod postmi is displayed"
+            " kolichestvo kommentariev. Chislo kommentariev dolzhno byt ukazano"
+            " v kruglykh skobkakh."
         )
 
     created_item_adapters = [CommentModelAdapter(i) for i in created_items]
@@ -212,8 +212,8 @@ def test_comment(
     )
 
     status_404_on_edit_deleted_comment_err_msg = (
-        "Убедитесь, что при обращении к странице редактирования"
-        " несуществующего комментария возвращается статус 404."
+        "Ensure that pri obrashchenii k page edit"
+        " nesushchestvuyushchego comment vozvrashchaetsya status 404."
     )
     try:
         response = user_client.get(edit_url[0])
@@ -234,16 +234,16 @@ def test_comment(
         assert response.status_code == HTTPStatus.NOT_FOUND, err_msg
 
     _test_delete_unexisting_comment(
-        "Убедитесь, что при обращении к странице удаления несуществующего"
-        " комментария возвращается статус 404."
+        "Ensure that pri obrashchenii k page deletion nesushchestvuyushchego"
+        " comment vozvrashchaetsya status 404."
     )
 
     item_to_edit_adapter.post.delete()
     item_to_edit_adapter.post.save()
 
     _test_delete_unexisting_comment(
-        "Убедитесь, что при обращении к странице удаления комментария "
-        "несуществующего поста возвращается статус 404."
+        "Ensure that pri obrashchenii k page deletion comment "
+        "nesushchestvuyushchego post vozvrashchaetsya status 404."
     )
 
 
@@ -264,7 +264,7 @@ def test_404_on_comment_deleted_post(
     a_post_get_response = get_a_post_get_response_safely(
         user_client, post_with_published_location.id
     )
-    creation_tester = CreateCommentFormTester(
+    create_tester = CreateCommentFormTester(
         a_post_get_response,
         CommentModel,
         user_client,
@@ -275,23 +275,23 @@ def test_404_on_comment_deleted_post(
     )
 
     Form: Type[BaseForm] = type(ctx_form)
-    form_to_create = create_comment_creation_forms(
-        creation_tester, Form, CommentModel, CommentModelAdapter,
+    form_to_create = create_comment_create_forms(
+        create_tester, Form, CommentModel, CommentModelAdapter,
         return_single_form=True
     )
 
     post_with_published_location.delete()
     post_with_published_location.save()
-    creation_tester.test_create_item(
+    create_tester.test_create_item(
         form=form_to_create,
         qs=CommentModel.objects.all(),
         submitter=AuthorisedSubmitTester(
-            creation_tester,
+            create_tester,
             test_response_cbk=(
                 AuthorisedSubmitTester.get_test_response_404_cbk(
                     err_msg=(
-                        "Убедитесь, что при попытке создания комментария "
-                        "к несуществующему посту возвращается статус 404."
+                        "Ensure that pri popytke create comment "
+                        "k nesushchestvuyushchemu postu vozvrashchaetsya status 404."
                     )
                 )
             ),

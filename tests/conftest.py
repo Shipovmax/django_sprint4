@@ -59,15 +59,15 @@ class SafeImportFromContextManager:
         if exc_type is ImportError:
             disp_imp_names = "`, ".join(self._import_names)
             raise AssertionError(
-                f"Убедитесь, что в файле `{self._import_path}` нет ошибок. "
-                f"При импорте из него {self._import_of}"
-                f"`{disp_imp_names}` возникла ошибка:\n"
+                f"Ensure that in the file `{self._import_path}` there are no errors. "
+                f"When importing {self._import_of}"
+                f"`{disp_imp_names}` an error occurred:\n"
                 f"{exc_type.__name__}: {exc_value}"
             )
 
 
 with SafeImportFromContextManager(
-        "blog/models.py", ["Category", "Location", "Post"], import_of="моделей"
+        "blog/models.py", ["Category", "Location", "Post"], import_of="models"
 ):
     try:
         from blog.models import Category, Location, Post  # noqa:F401
@@ -83,7 +83,7 @@ with SafeImportFromContextManager(
         for need_app_name, need_app_conf_name in need_apps.items():
             if need_app_conf_name not in registered_apps:
                 raise AssertionError(
-                    "Убедитесь, что зарегистрировано приложение "
+                    "Ensure that the application is registered "
                     f"{need_app_name}"
                 )
 
@@ -169,28 +169,28 @@ class _TestModelAttrs:
             param_error: Optional[str], value_error: Optional[str]):
         model_name = self.model.__name__
         field_error = field_error or (
-            f"В модели `{model_name}` укажите атрибут `{field}`.")
+            f"In the model `{model_name}` define attribute `{field}`.")
         assert hasattr(self.model, field), field_error
 
         model_field = getattr(self.model, field).field
         type_error = type_error or (
-            f"В модели `{model_name}` у атрибута `{field}` "
-            f"укажите тип `{type}`."
+            f"In the model `{model_name}` for attribute `{field}` "
+            f"set type `{type}`."
         )
         assert isinstance(model_field, type), type_error
 
         for param, value_param in params.items():
             display_name = self.get_parameter_display_name(param)
             param_error = param_error or (
-                f"В модели `{model_name}` для атрибута `{field}` "
-                f"укажите параметр `{display_name}`."
+                f"In the model `{model_name}` for attribute `{field}` "
+                f"set parameter `{display_name}`."
             )
             assert param in model_field.__dict__, param_error
 
             value_error = value_error or (
-                f"В модели `{model_name}` в атрибуте `{field}` "
-                f"проверьте значение параметра `{display_name}` "
-                "на соответствие заданию."
+                f"In the model `{model_name}` for attribute `{field}` "
+                f"verify the value of parameter `{display_name}` "
+                "against the task requirements."
             )
             assert model_field.__dict__.get(param) == value_param, value_error
 
@@ -201,10 +201,9 @@ def PostModel() -> Type[Model]:
         from blog.models import Post
     except Exception as e:
         raise AssertionError(
-            "При импорте модели `Post` из файла `models.py` возникла ошибка."
-            " Убедитесь, что в файле `blog/models.py` нет ошибок и что в нём"
-            " объявлена модель Post. Сообщение об"
-            f" ошибке:\n{type(e).__name__}: {e}"
+            "An error occurred while importing the `Post` model from `models.py`."
+            " Ensure that `blog/models.py` contains no errors and that it"
+            f" declares the `Post` model.\n{type(e).__name__}: {e}"
         )
     return Post
 
@@ -215,8 +214,8 @@ def CommentModel() -> Model:
         from blog import models
     except Exception as e:
         raise AssertionError(
-            "Убедитесь, что в файле `blog/models.py` нет ошибок. "
-            "При импорте `models.py` возникла ошибка:\n"
+            "Ensure that in the file `blog/models.py` there are no errors. "
+            "When importing `models.py` an error occurred:\n"
             f"{type(e).__name__}: {e}"
         )
     models_src_code = getsource(models)
@@ -237,8 +236,8 @@ def CommentModel() -> Model:
         if comment_class_name:
             break
     assert comment_class_name, (
-        "Убедитесь, что в файле `blog/models.py` объявлена модель комментария"
-        " с полем `ForeignKey`, связывающим её с моделью `Post`."
+        "Ensure that `blog/models.py` declares a comment model with a"
+        " `ForeignKey` field linked to the `Post` model."
     )
     return getattr(models, comment_class_name)
 
@@ -264,8 +263,8 @@ def get_a_post_get_response_safely(
         user_client,
         url=f"/posts/{post_id}/",
         err_msg=(
-            "Убедитесь, что опубликованный пост с опубликованной категорией и"
-            " датой публикации в прошлом отображается на странице публикации."
+            "Ensure that a published post with a published category and a"
+            " publication date in the past is displayed on the post page."
         ),
     )
 
@@ -276,8 +275,8 @@ def get_create_a_post_get_response_safely(user_client: Client) -> HttpResponse:
         user_client,
         url=url,
         err_msg=(
-            "Убедитесь, что страница создания публикации по адресу"
-            f" {url} отображается без ошибок."
+            "Ensure that the post creation page at"
+            f" {url} loads without errors."
         ),
     )
 

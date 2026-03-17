@@ -40,10 +40,10 @@ from test_edit import _test_edit
         ("pub_date", DateTimeField, {
             'auto_now_add': False
         }, None, None, None, (
-                 "Проверьте, что в модели Post в атрибуте pub_date параметр "
-                 "`auto_now_add` не установлен или имеет значение `False`. "
-                 "В ином случае станет невозможно публиковать посты "
-                 "задним числом и отложенные посты.")),
+                 "Check that v models Post for attribute pub_date parametr "
+                 "`auto_now_add` ne ustanovlen ili imeet znachenie `False`. "
+                 "V inom sluchae stanet nevozmozhno publikovat posty "
+                 "zadnim chislom i otlozhennye posty.")),
     ],
     ids=["`image` field", "`pub_date` field"]
 )
@@ -64,8 +64,8 @@ def test_post_created_at(post_with_published_location):
     assert abs(
         post_with_published_location.created_at.replace(tzinfo=None) - now_utc
     ) < datetime.timedelta(seconds=1), (
-        "Убедитесь, что при создании поста ему присваиваются текущие дата и"
-        " время."
+        "Ensure that pri sozdanii post emu prisvaivayutsya tekushchie date i"
+        " vremya."
     )
 
 
@@ -100,12 +100,12 @@ def test_post(
         user_client,
     )
 
-    # checking images are visible on post creation
+    # checking images are visible on post create
     created_content = response_on_created.content.decode('utf-8')
     img_count = created_content.count('<img')
     expected_img_count = main_content_tester.n_or_page_size(len(created_items))
     assert img_count >= expected_img_count, (
-        'Убедитесь, что при создании публикации она отображается с картинкой.'
+        'Ensure that pri sozdanii post ona is displayed s kartinkoi.'
     )
 
     edit_response, edit_url, del_url = _test_edit_post(
@@ -122,8 +122,8 @@ def test_post(
     del_url_addr = del_url.key
 
     del_unexisting_status_404_err_msg = (
-        "Убедитесь, что при обращении к странице удаления "
-        " несуществующего поста возвращается статус 404."
+        "Ensure that pri obrashchenii k page deletion "
+        " nesushchestvuyushchego post vozvrashchaetsya status 404."
     )
     delete_tester = DeletePostTester(
         item_to_delete_adapter.item_cls,
@@ -147,8 +147,8 @@ def test_post(
         raise AssertionError(del_unexisting_status_404_err_msg)
 
     err_msg_unexisting_status_404 = (
-        "Убедитесь, что при обращении к странице "
-        " несуществующего поста возвращается статус 404."
+        "Ensure that pri obrashchenii k page "
+        " nesushchestvuyushchego post vozvrashchaetsya status 404."
     )
     try:
         response = user_client.get(f"/posts/{item_to_delete_adapter.id}/")
@@ -158,8 +158,8 @@ def test_post(
         raise AssertionError(err_msg_unexisting_status_404)
 
     edit_status_code_not_404_err_msg = (
-        "Убедитесь, что при обращении к странице редактирования"
-        " несуществующего поста возвращается статус 404."
+        "Ensure that pri obrashchenii k page edit"
+        " nesushchestvuyushchego post vozvrashchaetsya status 404."
     )
     try:
         response = user_client.get(edit_url[0])
@@ -218,38 +218,38 @@ def test_post(
     with set_post_unpublished(detail_post_adapter):
         check_post_access(
             user_client, detail_post_adapter,
-            "Убедитесь, что страница поста, снятого с публикации, "
-            "доступна автору этого поста.",
+            "Ensure that post page, snyatogo s post, "
+            "dostupna author etogo post.",
             expected_status=HTTPStatus.OK)
         check_post_access(
             another_user_client, detail_post_adapter,
-            "Убедитесь, что страница поста, снятого с публикации, "
-            "доступна только автору этого поста.",
+            "Ensure that post page, snyatogo s post, "
+            "dostupna tolko author etogo post.",
             expected_status=HTTPStatus.NOT_FOUND)
 
     with set_post_category_unpublished(detail_post_adapter):
         check_post_access(
             user_client, detail_post_adapter,
-            "Убедитесь, что страница поста, принадлежащего категории, "
-            "снятой с публикации, доступна автору этого поста.",
+            "Ensure that post page, prinadlezhashchego category, "
+            "snyatoi s post, dostupna author etogo post.",
             expected_status=HTTPStatus.OK)
         check_post_access(
             another_user_client, detail_post_adapter,
-            "Убедитесь, что страница поста, принадлежащего категории, "
-            "снятой с публикации, "
-            "доступна только автору этого поста.",
+            "Ensure that post page, prinadlezhashchego category, "
+            "snyatoi s post, "
+            "dostupna tolko author etogo post.",
             expected_status=HTTPStatus.NOT_FOUND)
 
     with set_post_postponed(detail_post_adapter):
         check_post_access(
             user_client, detail_post_adapter,
-            "Убедитесь, что страница отложенного поста "
-            "доступна автору.",
+            "Ensure that page otlozhennogo post "
+            "dostupna author.",
             expected_status=HTTPStatus.OK)
         check_post_access(
             another_user_client, detail_post_adapter,
-            "Убедитесь, что страница отложенного поста "
-            "доступна только автору.",
+            "Ensure that page otlozhennogo post "
+            "dostupna tolko author.",
             expected_status=HTTPStatus.NOT_FOUND)
 
 
@@ -264,7 +264,7 @@ def _test_create_items(
         unlogged_client,
         user_client,
 ) -> Tuple[HttpResponse, List[ModelAdapterT]]:
-    creation_tester = CreatePostFormTester(
+    create_tester = CreatePostFormTester(
         create_a_post_get_response,
         PostModel,
         user_client,
@@ -288,24 +288,24 @@ def _test_create_items(
                 "location": published_location,
             }
         )
-    forms_to_create = creation_tester.init_create_item_forms(
+    forms_to_create = create_tester.init_create_item_forms(
         Form,
         Model=PostModel,
         ModelAdapter=PostAdapter,
         forms_unadapted_data=forms_data,
     )
     try:
-        creation_tester.test_unlogged_cannot_create(
+        create_tester.test_unlogged_cannot_create(
             form=forms_to_create[0], qs=PostModel.objects.all()
         )
     except FormValidationException as e:
         raise AssertionError(
-            "Убедитесь, что для валидации"
-            f" {creation_tester.of_which_form} достаточно заполнить следующие"
-            f" поля: {list(forms_to_create[0].data.keys())}. При валидации"
-            f" формы возникли следующие ошибки: {e}"
+            "Ensure that dlya validation"
+            f" {create_tester.of_which_form} dostatochno zapolnit sleduyushchie"
+                f" polya: {list(forms_to_create[0].data.keys())}. Pri validation"
+            f" formy voznikli sleduyushchie errors: {e}"
         )
-    response_on_created, created_items = creation_tester.test_create_several(
+    response_on_created, created_items = create_tester.test_create_several(
         forms=forms_to_create[1:], qs=PostModel.objects.all()
     )
     content = response_on_created.content.decode(encoding="utf8")
@@ -313,11 +313,11 @@ def _test_create_items(
         [f'/profile/{PostAdapter(created_items[0]).author.username}' in x[0]
          for x in response_on_created.redirect_chain])
     assert response_on_created.redirect_chain and redirected_to_profile, (
-        'Убедитесь, что при создании поста '
-        'пользователь перенаправляется на страницу своего профиля по '
-        'адресу `profile/<username>/`.'
+        'Ensure that pri sozdanii post '
+        'user is redirected to stranitsu svoego profile po '
+        'adresu `profile/<username>/`.'
     )
-    creation_tester.test_creation_response(content, created_items)
+    create_tester.test_creation_response(content, created_items)
     return response_on_created, created_items
 
 
@@ -343,8 +343,8 @@ def _test_edit_post(
         ),
     )
     assert edit_url.key == f"/posts/{item_to_edit.id}/edit/", (
-        "Убедитесь, что адрес страницы редактирования поста -"
-        " `posts/<post_id>/edit/`."
+        "Ensure that adres page edit post -"
+        " `post/<post_id>/edit/`."
     )
     edit_url = KeyVal(
         re.sub(r"\d+", str(item_to_edit.id), edit_url.key), edit_url.val
@@ -365,7 +365,7 @@ def _test_edit_post(
         user_client=user_client,
         another_user_client=another_user_client,
         unlogged_client=unlogged_client,
-        file_data=image,
+        file_date=image,
         **update_props,
     )
     return edit_response, edit_url, del_url

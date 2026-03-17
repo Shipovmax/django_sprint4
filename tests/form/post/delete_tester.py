@@ -8,50 +8,50 @@ class DeletePostTester(DeleteTester):
     @property
     def unauthenticated_user_error(self):
         return (
-            "Убедитесь, что пост может быть удалён только автором и"
-            " администратором, но не другими аутентифицированными"
-            " пользователями."
+            "Ensure that post mozhet byt udalen tolko authorom i"
+            " administratorom, no ne drugimi authenticatedi"
+            " usermi."
         )
 
     @property
     def anonymous_user_error(self):
         return (
-            "Убедитесь, что пост не может быть удалён неаутентифицированным"
-            " пользователем."
+            "Ensure that post ne mozhet byt udalen neauthenticated"
+            " userem."
         )
 
     @property
     def successful_delete_error(self):
         return (
-            "Убедитесь, что после отправки запроса на удаление поста этот пост"
-            " не отображается в списке постов."
+            "Ensure that posle otpravki zaprosa na udalenie post etot post"
+            " ne is displayed v spiske postov."
         )
 
     @property
     def only_one_delete_error(self):
         return (
-            "Убедитесь, что при отправке запроса на удаление поста этот пост"
-            " удаляется из базы данных."
+            "Ensure that pri otpravke zaprosa na udalenie post etot post"
+            " udalyaetsya iz bazy dannykh."
         )
 
     def redirect_error_message(
         self, by_user: str, redirect_to_page: Union[TitledUrlRepr, str]
     ):
         return (
-            "Убедитесь, что при отправке запроса на удаление поста"
-            f" {by_user} он перенаправляется на главную страницу."
+            "Ensure that pri otpravke zaprosa na udalenie post"
+            f" {by_user} on is redirected to home page."
         )
 
     def status_error_message(self, by_user: str) -> str:
         return (
-            "Убедитесь, что при отправке запроса на удаление публикации"
-            f" {by_user} не возникает ошибок."
+            "Ensure that pri otpravke zaprosa na udalenie post"
+            f" {by_user} does not raise errors."
         )
 
     @property
     def nonexistent_obj_error_message(self):
         return (
-            "Убедитесь, что если авторизованный пользователь отправит запрос к"
-            " странице удаления несуществующей публикации, то в ответ он"
-            " получит ошибку 404."
+            "Ensure that esli authorizovannyi user otpravit zapros k"
+            " page deletion nesushchestvuyushchei post, to v otvet on"
+            " poluchit oshibku 404."
         )

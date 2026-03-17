@@ -43,9 +43,9 @@ class StudentModelAdapter(ModelAdapter):
         }
 
         assert len(item_field_names) == len(item_fields), (
-            f"Убедитесь, что в модели {self.ItemModel.__name__} нет полей,"
-            " которые не описаны в задании. Проверьте, что для всех полей"
-            " модели правильно заданы типы."
+            f"Ensure that v models {self.ItemModel.__name__} net fieldi,"
+            " kotorye ne opisany v zadanii. Check that dlya vsekh fieldi"
+            " models pravilno zadany tipy."
         )
 
         adapter_field_key = get_field_key(
@@ -56,8 +56,8 @@ class StudentModelAdapter(ModelAdapter):
             item_field_name = item_field_names[adapter_field_key]
         except KeyError:
             raise AssertionError(
-                f"В модели `{self.ItemModel.__name__}` создайте поле типа"
-                f" `{adapter_field_key[0]}`, которое"
+                f"In the model `{self.ItemModel.__name__}` sozdaite field tipa"
+                f" `{adapter_field_key[0]}`, kotoroe"
                 f" {self.AdapterFields.field_description[name]}."
             )
         return getattr(self._item_or_cls, item_field_name)

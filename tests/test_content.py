@@ -188,52 +188,52 @@ class PostContentTester(ContentTester):
 class ProfilePostContentTester(PostContentTester):
     def items_key_error_message(self):
         return (
-            "Убедитесь, что существует ровно один ключ, под которым в словарь"
-            " контекста страницы пользователя передаются публикации."
+            "Ensure that sushchestvuet rovno odin klyuch, pod kotorym v slovar"
+            " kontexta user page peredayutsya post."
         )
 
     def items_hardcoded_key_error_message(self):
         return (
-            "Убедитесь, что в словарь контекста страницы пользователя"
-            f" публикации передаются под ключом `{self.items_hardcoded_key}`."
+            "Ensure that v slovar kontexta user page"
+            f" post peredayutsya pod klyuchom `{self.items_hardcoded_key}`."
         )
 
     def raise_assert_page_loads_cbk(self):
         raise AssertionError(
-            "Убедитесь, что страница пользователя загружается без ошибок."
+            "Ensure that user page loads without errors."
         )
 
     @property
     def image_display_error(self) -> str:
         return (
-            "Убедитесь, что на странице профиля автора отображаются"
-            " изображения публикаций."
+            "Ensure that on the profile authora are displayed"
+            " izobrazheniya post."
         )
 
 
 class MainPostContentTester(PostContentTester):
     def items_key_error_message(self):
         return (
-            "Убедитесь, что существует ровно один ключ, под которым в словарь"
-            " контекста главной страницы передаются публикации."
+            "Ensure that sushchestvuet rovno odin klyuch, pod kotorym v slovar"
+            " kontexta home page peredayutsya post."
         )
 
     def items_hardcoded_key_error_message(self):
         return (
-            "Убедитесь, что в словарь контекста главной страницы публикации"
-            f" передаются под ключом `{self.items_hardcoded_key}`."
+            "Ensure that v slovar kontexta home page post"
+            f" peredayutsya pod klyuchom `{self.items_hardcoded_key}`."
         )
 
     def raise_assert_page_loads_cbk(self):
         raise AssertionError(
-            "Убедитесь, что главная страница загружается без ошибок."
+            "Ensure that glavnaya page loads without errors."
         )
 
     @property
     def image_display_error(self) -> str:
         return (
-            "Убедитесь, что на главной странице видны прикреплённые к постам"
-            " изображения."
+            "Ensure that on the home page vidny prikreplennye k postm"
+            " izobrazheniya."
         )
 
 
@@ -252,26 +252,26 @@ class CategoryPostContentTester(PostContentTester):
 
     def items_key_error_message(self):
         return (
-            "Убедитесь, что существует ровно один ключ, под которым в словарь"
-            " контекста страницы категории передаются публикации."
+            "Ensure that sushchestvuet rovno odin klyuch, pod kotorym v slovar"
+            " kontexta page category peredayutsya post."
         )
 
     def items_hardcoded_key_error_message(self):
         return (
-            "Убедитесь, что в словарь контекста страницы категории публикации"
-            f" передаются под ключом `{self.items_hardcoded_key}`."
+            "Ensure that v slovar kontexta page category post"
+            f" peredayutsya pod klyuchom `{self.items_hardcoded_key}`."
         )
 
     def raise_assert_page_loads_cbk(self):
         raise AssertionError(
-            "Убедитесь, что страница категории загружается без ошибок."
+            "Ensure that page category loads without errors."
         )
 
     @property
     def image_display_error(self) -> str:
         return (
-            "Убедитесь, что на странице категории видны прикреплённые к постам"
-            " изображения."
+            "Ensure that on the category vidny prikreplennye k postm"
+            " izobrazheniya."
         )
 
 
@@ -336,17 +336,17 @@ class TestContent:
         self.main_tester = main_content_tester
         self.category_tester = category_content_tester
 
-    def test_unpublished(self, unpublished_posts_with_published_locations):
+    def test_unpublished(self, unpublished_post_with_published_locations):
         profile_response = self.profile_tester.user_client_testget()
-        context_posts = profile_response.context.get(
+        context_post = profile_response.context.get(
             self.profile_tester.items_key
         )
         expected_n = self.profile_tester.n_or_page_size(
-            len(unpublished_posts_with_published_locations)
+            len(unpublished_post_with_published_locations)
         )
-        assert len(context_posts) == expected_n, (
-            "Убедитесь, что на странице пользователя автор может видеть свои"
-            " посты, снятые с публикации."
+        assert len(context_post) == expected_n, (
+            "Ensure that on the user author mozhet videt svoi"
+            " posty, snyatye s post."
         )
 
         response = self.main_tester.user_client_testget()
@@ -355,10 +355,10 @@ class TestContent:
         except AssertionError:
             pass
         else:
-            context_posts = response.context.get(items_key)
-            assert len(context_posts) == 0, (
-                "Убедитесь, что на главной странице не отображаются посты, "
-                "снятые с публикации."
+            context_post = response.context.get(items_key)
+            assert len(context_post) == 0, (
+                "Ensure that on the home page ne are displayed posty, "
+                "snyatye s post."
             )
 
         response = self.category_tester.user_client_testget()
@@ -367,10 +367,10 @@ class TestContent:
         except AssertionError:
             pass
         else:
-            context_posts = response.context.get(items_key)
-            assert len(context_posts) == 0, (
-                "Убедитесь, что на странице категории не отображаются посты, "
-                "снятые с публикации."
+            context_post = response.context.get(items_key)
+            assert len(context_post) == 0, (
+                "Ensure that on the category ne are displayed posty, "
+                "snyatye s post."
             )
 
     def test_only_own_pubs_in_category(
@@ -383,11 +383,11 @@ class TestContent:
         except AssertionError:
             pass
         else:
-            context_posts = response.context.get(items_key)
+            context_post = response.context.get(items_key)
             assert (
-                len(context_posts) == 1
-            ), ("Убедитесь, что на странице категории "
-                "не отображаются публикации других категорий.")
+                len(context_post) == 1
+            ), ("Ensure that on the category "
+                "ne are displayed post drugikh category.")
 
     def test_only_own_pubs_in_profile(
             self, user_client, post_with_published_location,
@@ -399,53 +399,53 @@ class TestContent:
         except AssertionError:
             pass
         else:
-            context_posts = response.context.get(items_key)
+            context_post = response.context.get(items_key)
             assert (
-                    len(context_posts) == 1
-            ), ("Убедитесь, что на странице пользователя "
-                "не отображаются публикации других авторов.")
+                    len(context_post) == 1
+            ), ("Ensure that on the user "
+                "ne are displayed post drugikh authorov.")
 
     def test_unpublished_category(
-        self, user_client, posts_with_unpublished_category
+        self, user_client, post_with_unpublished_category
     ):
         profile_response = self.profile_tester.user_client_testget()
-        context_posts = profile_response.context.get(
+        context_post = profile_response.context.get(
             self.profile_tester.items_key
         )
         expected_n = self.profile_tester.n_or_page_size(
-            len(posts_with_unpublished_category)
+            len(post_with_unpublished_category)
         )
-        assert len(context_posts) == expected_n, (
-            "Убедитесь, что на странице пользователя автор может видеть свои"
-            " посты, принадлежащие категории, снятой с публикации."
+        assert len(context_post) == expected_n, (
+            "Ensure that on the user author mozhet videt svoi"
+            " posty, prinadlezhashchie category, snyatoi s post."
         )
 
         main_response = self.main_tester.user_client_testget()
-        context_posts = main_response.context.get(self.main_tester.items_key)
-        assert len(context_posts) == 0, (
-            "Убедитесь, что на главной странице не отображаются посты, "
-            "принадлежащие категории, снятой с публикации."
+        context_post = main_response.context.get(self.main_tester.items_key)
+        assert len(context_post) == 0, (
+            "Ensure that on the home page ne are displayed posty, "
+            "prinadlezhashchie category, snyatoi s post."
         )
 
         def raise_assert_not_exist_cbk():
             raise AssertionError(
-                "Убедитесь, что страница категории недоступна, если категория"
-                " снята с публикации."
+                "Ensure that page category nedostupna, esli category"
+                " snyata s post."
             )
 
         self.category_tester.user_client_testget(
             assert_status_in=(404,), assert_cbk=raise_assert_not_exist_cbk
         )
 
-    def test_future_posts(self, user_client, future_posts):
+    def test_future_post(self, user_client, future_post):
         profile_response = self.profile_tester.user_client_testget()
-        context_posts = profile_response.context.get(
+        context_post = profile_response.context.get(
             self.profile_tester.items_key
         )
-        expected_n = self.profile_tester.n_or_page_size(len(future_posts))
-        assert len(context_posts) == expected_n, (
-            "Убедитесь, что на странице пользователя автор может видеть свои"
-            " отложенные публикации."
+        expected_n = self.profile_tester.n_or_page_size(len(future_post))
+        assert len(context_post) == expected_n, (
+            "Ensure that on the user author mozhet videt svoi"
+            " otlozhennye post."
         )
 
         response = self.main_tester.user_client_testget()
@@ -454,11 +454,11 @@ class TestContent:
         except AssertionError:
             pass
         else:
-            context_posts = response.context.get(items_key)
+            context_post = response.context.get(items_key)
             assert (
-                len(context_posts) == 0
-            ), ("Убедитесь, что на главной странице "
-                "не отображаются отложенные публикации.")
+                len(context_post) == 0
+            ), ("Ensure that on the home page "
+                "ne are displayed otlozhennye post.")
 
         response = self.category_tester.user_client_testget()
         try:
@@ -466,20 +466,20 @@ class TestContent:
         except AssertionError:
             pass
         else:
-            context_posts = response.context.get(items_key)
+            context_post = response.context.get(items_key)
             assert (
-                len(context_posts) == 0
-            ), ("Убедитесь, что на странице категории "
-                "не отображаются отложенные публикации.")
+                len(context_post) == 0
+            ), ("Ensure that on the category "
+                "ne are displayed otlozhennye post.")
 
     def test_pagination(
-        self, user_client, many_posts_with_published_locations
+        self, user_client, many_post_with_published_locations
     ):
-        posts = many_posts_with_published_locations
+        post = many_post_with_published_locations
 
-        assert len(posts) > self.profile_tester.n_per_page
-        assert len(posts) > self.main_tester.n_per_page
-        assert len(posts) > self.category_tester.n_per_page
+        assert len(post) > self.profile_tester.n_per_page
+        assert len(post) > self.main_tester.n_per_page
+        assert len(post) > self.category_tester.n_per_page
 
         for (
             tester,
@@ -491,58 +491,58 @@ class TestContent:
                 self.profile_tester,
                 self.profile_tester.user_client_testget,
                 (
-                    "Убедитесь, что публикации передаются в контекст страницы"
-                    " профиля автора отсортированными по времени их"
-                    " публикации, «от новых к старым»."
+                    "Ensure that post peredayutsya v kontext page"
+                    " profile authora otsortirovannymi po vremeni ikh"
+                    " post, «ot novykh k starym»."
                 ),
                 (
-                    "Убедитесь, что на странице профиля автора работает"
-                    " пагинация."
+                    "Ensure that on the profile authora rabotaet"
+                    " paginatsiya."
                 ),
             ),
             (
                 self.profile_tester,
                 self.profile_tester.another_client_testget,
                 (
-                    "Убедитесь, что публикации передаются в контекст страницы"
-                    " профиля автора отсортированными по времени их"
-                    " публикации, «от новых к старым»."
+                    "Ensure that post peredayutsya v kontext page"
+                    " profile authora otsortirovannymi po vremeni ikh"
+                    " post, «ot novykh k starym»."
                 ),
                 (
-                    "Убедитесь, что на странице профиля автора "
-                    "пагинация работает в соответствии с заданием ."
+                    "Ensure that on the profile authora "
+                    "paginatsiya rabotaet v sootvetstvii s zadaniem ."
                 ),
             ),
             (
                 self.main_tester,
                 self.main_tester.user_client_testget,
                 (
-                    "Убедитесь, что публикации передаются в контекст главной"
-                    " страницы отсортированными по времени их публикации, «от"
-                    " новых к старым»."
+                    "Ensure that post peredayutsya v kontext home"
+                    " page otsortirovannymi po vremeni ikh post, «ot"
+                    " novykh k starym»."
                 ),
-                "Убедитесь, что на главной странице "
-                "пагинация работает в соответствии с заданием .",
+                "Ensure that on the home page "
+                "paginatsiya rabotaet v sootvetstvii s zadaniem .",
             ),
             (
                 self.category_tester,
                 self.category_tester.user_client_testget,
                 (
-                    "Убедитесь, что публикации передаются в контекст страницы"
-                    " категории отсортированными по времени их публикации, «от"
-                    " новых к старым»."
+                    "Ensure that post peredayutsya v kontext page"
+                    " category otsortirovannymi po vremeni ikh post, «ot"
+                    " novykh k starym»."
                 ),
-                "Убедитесь, что на странице категории "
-                "пагинация работает в соответствии с заданием .",
+                "Ensure that on the category "
+                "paginatsiya rabotaet v sootvetstvii s zadaniem .",
             ),
         ):
             response = response_get_func()
-            context_posts = response.context.get(tester.items_key)
-            pub_dates = [x.pub_date for x in context_posts]
+            context_post = response.context.get(tester.items_key)
+            pub_dates = [x.pub_date for x in context_post]
             if pub_dates != sorted(pub_dates, reverse=True):
                 raise AssertionError(ordering_err_msg)
-            expected_n = tester.n_or_page_size(len(posts))
-            assert len(context_posts) == expected_n, pagination_err_msg
+            expected_n = tester.n_or_page_size(len(post))
+            assert len(context_post) == expected_n, pagination_err_msg
 
     def test_image_visible(self, user_client, post_with_published_location):
         post = post_with_published_location

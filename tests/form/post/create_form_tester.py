@@ -35,7 +35,7 @@ class CreatePostFormTester(PostFormTester):
             )
         except FormTagMissingException as e:
             raise AssertionError(
-                "Убедитесь, что на страницу создания поста передаётся форма."
+                "Ensure that the create post form is provided."
             ) from e
 
     @property
@@ -44,7 +44,7 @@ class CreatePostFormTester(PostFormTester):
             return super().textarea_tag
         except TextareaTagMissingException as e:
             raise AssertionError(
-                "Убедитесь, что в форме создания поста есть элемент"
+                "Ensure that v post create form est element"
                 " `textarea`."
             ) from e
 
@@ -53,17 +53,17 @@ class CreatePostFormTester(PostFormTester):
             super()._validate()
         except FormTagMissingException as e:
             raise AssertionError(
-                "Убедитесь, что на страницу создания поста передаётся форма."
+                "Ensure that the create post form is provided."
             ) from e
         except FormMethodException as e:
             raise AssertionError(
-                "Убедитесь, что форма для создания поста отправляется методом"
+                "Ensure that the post create form is submitted using method"
                 " `POST`."
             ) from e
         except TextareaMismatchException as e:
             raise AssertionError(
-                "Убедитесь, что в форме создания поста текст поста"
-                " отправляется в поле типа `textarea`."
+                "Ensure that v post create form text post"
+                " is submitted through a `textarea` field."
             ) from e
 
     def try_create_item(
@@ -77,7 +77,7 @@ class CreatePostFormTester(PostFormTester):
             return super().try_create_item(form, qs, submitter, assert_created)
         except FormValidationException as e:
             raise AssertionError(
-                "При создании поста возникает ошибка:\n"
+                "When creating post voznikaet error:\n"
                 f"{type(e).__name__}: {e}"
             ) from e
 
@@ -88,9 +88,9 @@ class CreatePostFormTester(PostFormTester):
             super().test_unlogged_cannot_create(form, qs)
         except ItemCreatedException as e:
             raise AssertionError(
-                "Проверьте, что если неаутентифицированный пользователь"
-                " отправит форму для создания поста - объект поста в базе"
-                " данных не будет создан."
+                "Check that esli an unauthenticated user"
+                " otpravit formu dlya create post - obekt post v baze"
+                " dannykh is not created."
             ) from e
 
     def redirect_error_message(
@@ -100,54 +100,54 @@ class CreatePostFormTester(PostFormTester):
             redirect_to_page
         )
         return (
-            f"Убедитесь, что при отправке формы создания поста {by_user} он"
-            f" перенаправляется на {redirect_to_page_repr}."
+            f"Ensure that pri otpravke formy create post {by_user} on"
+            f" is redirected to {redirect_to_page_repr}."
         )
 
     def status_error_message(self, by_user: str) -> str:
         return (
-            "Убедитесь, что при отправке формы создания публикации"
-            f" {by_user} не возникает ошибок."
+            "Ensure that pri otpravke formy create post"
+            f" {by_user} does not raise errors."
         )
 
     @property
     def author_assignment_error_message(self) -> str:
         return (
-            "Убедитесь, что при создании поста в форму в поле «автор»"
-            " передаётся аутентифицированный пользователь."
+            "Ensure that pri sozdanii post v formu v `author` field"
+            " the authenticated user is provided."
         )
 
     @property
     def display_text_error_message(self) -> str:
         return (
-            "Убедитесь, что после создания поста текст отображается на"
-            " отдельной странице поста."
+            "Ensure that posle create post text is displayed on the"
+            " otdelnoi post page."
         )
 
     def validation_error_message(self, student_form_fields_str: str) -> str:
         return (
-            "Убедитесь, что для валидации формы создания публикации"
-            f" достаточно заполнить следующие поля: {student_form_fields_str}."
+            "Ensure that dlya validation formy create post"
+            f" it is enough to fill in the following fields: {student_form_fields_str}."
         )
 
     @property
     def item_not_created_assertion_msg(self):
         return (
-            "Убедитесь, что при отправке формы создания поста авторизованным"
-            " пользователем в базе данных создаётся один и только один объект"
-            " поста."
+            "Ensure that pri otpravke formy create post authorized"
+            " userem v database exactly one object is created"
+            " post."
         )
 
     @property
     def wrong_author_assertion_msg(self):
         return (
-            "Убедитесь, что при создании поста в форму в поле «автор»"
-            " передаётся аутентифицированный пользователь."
+            "Ensure that pri sozdanii post v formu v `author` field"
+            " the authenticated user is provided."
         )
 
     def creation_assertion_msg(self, prop):
         return (
-            "Убедитесь, что после отправки формы создания поста правильно"
-            f" работает переадресация. Проверьте, что значение поля `{prop}`"
-            " отображается на странице, на которую был переадресован пользователь."
+            "Ensure that posle otpravki formy create post pravilno"
+            f" rabotaet redirect. Check that znachenie polya `{prop}`"
+            " is displayed on the page, na kotoruyu byl pereadresovan user."
         )

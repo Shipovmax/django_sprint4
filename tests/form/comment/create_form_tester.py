@@ -35,8 +35,8 @@ class CreateCommentFormTester(BaseFormTester):
             )
         except FormTagMissingException as e:
             raise AssertionError(
-                "Убедитесь, что для аутентифицированного пользователя на"
-                " страницу поста передаётся форма для создания комментария."
+                "Ensure that dlya authenticated user na"
+                " stranitsu post form is provided dlya create comment."
             ) from e
 
     @property
@@ -49,8 +49,8 @@ class CreateCommentFormTester(BaseFormTester):
             return super().textarea_tag
         except TextareaTagMissingException as e:
             raise AssertionError(
-                "Убедитесь, что в форме для создания комментария есть поле"
-                " типа `textarea` для ввода текста."
+                "Ensure that v forme dlya create comment est field"
+                " tipa `textarea` dlya vvoda texta."
             ) from e
 
     def _validate(self):
@@ -58,18 +58,18 @@ class CreateCommentFormTester(BaseFormTester):
             super()._validate()
         except FormTagMissingException as e:
             raise AssertionError(
-                "Убедитесь, что для аутентифицированного пользователя на"
-                " страницу поста передаётся форма для создания комментария."
+                "Ensure that dlya authenticated user na"
+                " stranitsu post form is provided dlya create comment."
             ) from e
         except FormMethodException as e:
             raise AssertionError(
-                "Убедитесь, что форма для создания комментария отправляется"
-                " методом `POST`."
+                "Ensure that the comment create form otpravlyaetsya"
+                " metodom `POST`."
             ) from e
         except TextareaMismatchException as e:
             raise AssertionError(
-                "Убедитесь, что в форме создания комментария текст"
-                " комментария передаётся через поле типа `textarea`."
+                "Ensure that v comment create form text"
+                " comment peredaetsya cherez field tipa `textarea`."
             ) from e
 
     def try_create_item(
@@ -83,7 +83,7 @@ class CreateCommentFormTester(BaseFormTester):
             return super().try_create_item(form, qs, submitter, assert_created)
         except FormValidationException as e:
             raise AssertionError(
-                "При создании комментария возникает ошибка:\n"
+                "When creating comment voznikaet error:\n"
                 f"{type(e).__name__}: {e}"
             ) from e
 
@@ -94,9 +94,9 @@ class CreateCommentFormTester(BaseFormTester):
             super().test_unlogged_cannot_create(form, qs)
         except ItemCreatedException as e:
             raise AssertionError(
-                "Убедитесь, что при отправке комментария"
-                " неаутентифицированным пользователем в базе данных не"
-                " создаётся объект комментария."
+                "Ensure that pri otpravke comment"
+                " neauthenticated userem v database ne"
+                " sozdaetsya comment object."
             ) from e
 
     def redirect_error_message(
@@ -106,54 +106,54 @@ class CreateCommentFormTester(BaseFormTester):
             redirect_to_page
         )
         return (
-            "Убедитесь, что при отправке формы создания комментария"
-            f" {by_user} он перенаправляется на {redirect_to_page_repr}."
+            "Ensure that pri otpravke formy create comment"
+            f" {by_user} on is redirected to {redirect_to_page_repr}."
         )
 
     def status_error_message(self, by_user: str) -> str:
         return (
-            "Убедитесь, что при отправке формы для создания комментария"
-            f" {by_user} не возникает ошибок."
+            "Ensure that pri otpravke formy dlya create comment"
+            f" {by_user} does not raise errors."
         )
 
     @property
     def author_assignment_error_message(self) -> str:
         return (
-            "Убедитесь, что при создании комментария в форму в поле «автор»"
-            " передаётся аутентифицированный пользователь."
+            "Ensure that pri sozdanii comment v formu v `author` field"
+            " the authenticated user is provided."
         )
 
     @property
     def display_text_error_message(self) -> str:
         return (
-            "Убедитесь, что после создании комментария его текст отображается"
-            " на странице поста в списке комментариев."
+            "Ensure that posle sozdanii comment ego text is displayed"
+            " on the post page v spiske kommentariev."
         )
 
     def validation_error_message(self, student_form_fields_str: str) -> str:
         return (
-            "Убедитесь, что для валидации формы создания комментария"
-            f" достаточно заполнить следующие поля: {student_form_fields_str}."
+            "Ensure that dlya validation formy create comment"
+            f" it is enough to fill in the following fields: {student_form_fields_str}."
         )
 
     @property
     def item_not_created_assertion_msg(self):
         return (
-            "Убедитесь, что при отправке формы создания комментария"
-            " авторизованным пользователем в базе данных создаётся один и"
-            " только один объект комментария."
+            "Ensure that pri otpravke formy create comment"
+            " an authorized user v database sozdaetsya odin i"
+            " tolko odin comment object."
         )
 
     @property
     def wrong_author_assertion_msg(self):
         return (
-            "Убедитесь, что при создании комментария в форму в поле «автор»"
-            " передаётся аутентифицированный пользователь."
+            "Ensure that pri sozdanii comment v formu v `author` field"
+            " the authenticated user is provided."
         )
 
     def creation_assertion_msg(self, prop):
         return (
-            "Убедитесь, что при создании комментария правильно настроена"
-            f" переадресация, и значение поля `{prop}` отображается на"
-            " странице поста, к которому относится комментарий."
+            "Ensure that pri sozdanii comment pravilno nastroena"
+            f" redirect, i znachenie polya `{prop}` is displayed on the"
+            " post page, k kotoromu otnositsya comments."
         )

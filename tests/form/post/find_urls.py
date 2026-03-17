@@ -18,42 +18,42 @@ def find_edit_and_delete_urls(
     """Looks up two links in the post_page_response's content.
     The links must be found between the post's text and the first
     comment to the post.
-    The one with the word `edit` in it is for editing the post,
+    The one with the word `edit` in it is for edit the post,
     the other one, therefore, is for its deletion.
-    !!! Make posts and comments have unique texts and titles.
+    !!! Make post and comments have unique texts and titles.
     """
 
     post_page_content = post_page_response.content.decode("utf-8")
 
     links_not_found_err_msg = (
-        "Убедитесь, что на странице поста отображаются комментарии к нему."
-        " Проверьте, что автору поста доступны ссылки для редактирования и"
-        " для удаления этого поста. Адрес ссылок должен начинаться с"
+        "Ensure that on the post are displayed comments k nemu."
+        " Check that author post dostupny links dlya edit i"
+        " dlya deletion etogo post. Adres ssylok dolzhen nachinatsya s"
         f" {urls_start_with.key}"
     )
 
-    # Get info about html between two consecutive posts
+    # Get info about html between two consecutive post
     displayed_post_text = post_adapter.displayed_field_name_or_value
     displayed_comment_text = comment_adapter.displayed_field_name_or_value
     pattern = re.compile(
         rf"{displayed_post_text}([\w\W]*?){displayed_comment_text}"
     )
-    between_posts_match = pattern.search(post_page_content)
-    assert between_posts_match, links_not_found_err_msg
-    text_between_posts = between_posts_match.group(1)
-    between_posts_start_lineix = post_page_content.count(
-        "\n", 0, between_posts_match.start()
+    between_post_match = pattern.search(post_page_content)
+    assert between_post_match, links_not_found_err_msg
+    text_between_post = between_post_match.group(1)
+    between_post_start_lineix = post_page_content.count(
+        "\n", 0, between_post_match.start()
     )
-    between_posts_end_lineix = between_posts_start_lineix + (
-        between_posts_match.group().count("\n")
+    between_post_end_lineix = between_post_start_lineix + (
+        between_post_match.group().count("\n")
     )
 
     post_links = find_links_between_lines(
         post_page_content,
         urls_start_with.val,
-        between_posts_start_lineix,
-        between_posts_end_lineix,
-        link_text_in=text_between_posts,
+        between_post_start_lineix,
+        between_post_end_lineix,
+        link_text_in=text_between_post,
     )
     if len(set(link.get("href") for link in post_links)) != 2:
         raise AssertionError(links_not_found_err_msg)
@@ -65,13 +65,13 @@ def find_edit_and_delete_urls(
     if "edit" in edit_link.get("href"):
         assert "edit" not in del_link.get(
             "href"
-        ), "Убедитесь, что в адресе страницы удаления поста нет слова `edit`."
+        ), "Ensure that v adrese page deletion post net slova `edit`."
     elif "edit" in del_link.get("href"):
         edit_link, del_link = del_link, edit_link
     else:
         raise AssertionError(
-            "Убедитесь, что адрес страницы редактирования поста"
-            " -`posts/<post_id>/edit/`."
+            "Ensure that adres page edit post"
+            " -`post/<post_id>/edit/`."
         )
 
     post_url_display_names = get_url_display_names(

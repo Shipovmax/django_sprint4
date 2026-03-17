@@ -43,15 +43,15 @@ class EditPostFormTester(PostFormTester):
             )
         except FormTagMissingException as e:
             raise AssertionError(
-                "Убедитесь, что на страницу редактирования поста передаётся"
-                " форма."
+                "Ensure that the edit post peredaetsya"
+                " forma."
             ) from e
 
     @property
     def unauthorized_edit_redirect_cbk(self):
         redirect_to_page: TitledUrlRepr = (
             UrlRepr(r"/posts/\d+/$", "/posts/<int:post_id>/"),
-            "страницу публикации",
+            "post page",
         )
         return UnauthorizedSubmitTester.get_test_response_redirect_cbk(
             tester=self, redirect_to_page=redirect_to_page
@@ -60,7 +60,7 @@ class EditPostFormTester(PostFormTester):
     @property
     def anonymous_edit_redirect_cbk(self):
         return AnonymousSubmitTester.get_test_response_redirect_cbk(
-            tester=self, redirect_to_page="страницу аутентификации"
+            tester=self, redirect_to_page="authentication page"
         )
 
     @property
@@ -69,7 +69,7 @@ class EditPostFormTester(PostFormTester):
             return super().textarea_tag
         except TextareaTagMissingException as e:
             raise AssertionError(
-                "Убедитесь, что в форме редактирования поста есть элемент"
+                "Ensure that v post edit form est element"
                 " `textarea`."
             ) from e
 
@@ -78,18 +78,18 @@ class EditPostFormTester(PostFormTester):
             super()._validate()
         except FormTagMissingException as e:
             raise AssertionError(
-                "Убедитесь, что на страницу редактирования поста передаётся"
-                " форма."
+                "Ensure that the edit post peredaetsya"
+                " forma."
             ) from e
         except FormMethodException as e:
             raise AssertionError(
-                "Убедитесь, что форма для редактирования поста отправляется"
-                " методом `POST`."
+                "Ensure that forma dlya edit post otpravlyaetsya"
+                " metodom `POST`."
             ) from e
         except TextareaMismatchException as e:
             raise AssertionError(
-                "Убедитесь, что в форме редактирования поста основной текст"
-                " передаётся в поле типа `textarea`."
+                "Ensure that v post edit form osnovnoi text"
+                " peredaetsya v field tipa `textarea`."
             ) from e
 
     def try_create_item(
@@ -103,7 +103,7 @@ class EditPostFormTester(PostFormTester):
             return super().try_create_item(form, qs, submitter, assert_created)
         except FormValidationException as e:
             raise AssertionError(
-                "При редактировании поста возникает ошибка:\n"
+                "When edit post voznikaet error:\n"
                 f"{type(e).__name__}: {e}"
             ) from e
 
@@ -114,9 +114,9 @@ class EditPostFormTester(PostFormTester):
             super().test_unlogged_cannot_create(form, qs)
         except ItemCreatedException as e:
             raise AssertionError(
-                "Проверьте, что если неаутентифицированный пользователь"
-                " отправит форму редактирования поста - объект поста в базе"
-                " данных не будет создан или изменён."
+                "Check that esli an unauthenticated user"
+                " otpravit formu edit post - obekt post v baze"
+                " dannykh is not created ili izmenen."
             ) from e
 
     def test_edit_item(
@@ -126,22 +126,22 @@ class EditPostFormTester(PostFormTester):
             return super().test_edit_item(updated_form, qs, item_adapter)
         except UnauthorizedEditException:
             raise AssertionError(
-                "Убедитесь, что пользователь не может редактировать чужие"
-                " посты."
+                "Ensure that user ne mozhet redaktirovat chuzhie"
+                " posty."
             )
         except UnauthenticatedEditException:
             raise AssertionError(
-                "Убедитесь, что неаутентифицированный пользователь не может"
-                " редактировать посты."
+                "Ensure that an unauthenticated user ne mozhet"
+                " redaktirovat posty."
             )
         except AuthenticatedEditException:
             raise AssertionError(
-                "Убедитесь, что пользователь может редактировать свои посты."
+                "Ensure that user mozhet redaktirovat svoi posty."
             )
         except DatabaseCreationException:
             raise AssertionError(
-                "Убедитесь, что при редактировании поста в базе данных не"
-                " создаётся новый объект поста."
+                "Ensure that pri redaktirovanii post v database ne"
+                " sozdaetsya novyi obekt post."
             )
 
     def redirect_error_message(
@@ -151,54 +151,54 @@ class EditPostFormTester(PostFormTester):
             redirect_to_page
         )
         return (
-            "Убедитесь, что при отправке формы редактирования поста"
-            f" {by_user} он перенаправляется на {redirect_to_page_repr}."
+            "Ensure that pri otpravke formy edit post"
+            f" {by_user} on is redirected to {redirect_to_page_repr}."
         )
 
     def status_error_message(self, by_user: str) -> str:
         return (
-            "Убедитесь, что при отправке формы редактирования поста"
-            f" {by_user} не возникает ошибок."
+            "Ensure that pri otpravke formy edit post"
+            f" {by_user} does not raise errors."
         )
 
     @property
     def author_assignment_error_message(self) -> str:
         return (
-            "Убедитесь, что в форму редактирования поста в поле «автор»"
-            " передаётся аутентифицированный пользователь."
+            "Ensure that v formu edit post v `author` field"
+            " the authenticated user is provided."
         )
 
     @property
     def display_text_error_message(self) -> str:
         return (
-            "Убедитесь, что после редактирования поста новый текст"
-            " отображается на странице поста."
+            "Ensure that posle edit post novyi text"
+            " is displayed on the post page."
         )
 
     def validation_error_message(self, student_form_fields_str: str) -> str:
         return (
-            "Убедитесь, что для валидации формы редактирования поста"
-            f" достаточно заполнить следующие поля: {student_form_fields_str}."
+            "Ensure that dlya validation formy edit post"
+            f" it is enough to fill in the following fields: {student_form_fields_str}."
         )
 
     @property
     def item_not_created_assertion_msg(self):
         return (
-            "Убедитесь, что при отправке формы редактирования публикации"
-            " авторизованным пользователем  в базе данных не создаётся новый"
-            " объект поста."
+            "Ensure that pri otpravke formy edit post"
+            " an authorized user  v database ne sozdaetsya novyi"
+            " obekt post."
         )
 
     @property
     def wrong_author_assertion_msg(self):
         return (
-            "Убедитесь, что при редактировании поста в форму в поле «автор»"
-            " передаётся аутентифицированный пользователь."
+            "Ensure that pri redaktirovanii post v formu v `author` field"
+            " the authenticated user is provided."
         )
 
     def creation_assertion_msg(self, prop):
         return (
-            "Убедитесь, что после отправки формы редактирования поста"
-            " правильно работает переадресация. Проверьте, что значение поля"
-            f" `{prop}` отображается на странице поста."
+            "Ensure that posle otpravki formy edit post"
+            " redirect works correctly. Check that znachenie polya"
+            f" `{prop}` is displayed on the post page."
         )

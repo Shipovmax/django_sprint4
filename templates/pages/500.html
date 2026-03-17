@@ -1,7 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Ошибка сервера{% endblock %}
+{% block title %}Server Error{% endblock %}
 {% block content %}
-  <h1>Ошибка сервера</h1>
-  <p>На сервере что-то пошло не так!</p>
-  <a href="{% url 'blog:index' %}">Вернуться на главную</a>
+  <h1>Server Error</h1>
+  <p>Something went wrong on the server.</p>
+  <a href="{% url 'blog:index' %}">Back to Home</a>
 {% endblock %}

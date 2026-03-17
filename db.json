@@ -5,9 +5,9 @@
   "fields": {
     "created_at": "2022-12-18T23:03:52.159Z",
     "is_published": true,
-    "title": "День как день",
+    "title": "Den kak den",
     "slug": "routine",
-    "description": "У вас убежало молоко? Вы отразили атаку инопланетян, как и позавчера?\r\nРасскажите, как проходят ваши самые обычные дни."
+    "description": "U vas ubezhalo moloko? Vy otrazili ataku inoplanetyan, kak i pozavchera?\r\nRasskazhite, kak prokhodyat vashi samye obychnye dni."
   }
 },
 {
@@ -16,9 +16,9 @@
   "fields": {
     "created_at": "2022-12-18T23:04:21.682Z",
     "is_published": true,
-    "title": "Здоровье",
+    "title": "Zdorove",
     "slug": "health",
-    "description": "Как сохранить физическое здоровье, не растеряв душевного спокойствия? Истории о спорте и ЗОЖ, о болезнях и выздоровлениях — пишите в эту категорию!"
+    "description": "Kak sokhranit fizicheskoe zdorove, ne rasteryav dushevnogo spokoistviya? Istorii o sporte i ZOZh, o boleznyakh i vyzdorovleniyakh — pishite v etu kategoriyu!"
   }
 },
 {
@@ -27,9 +27,9 @@
   "fields": {
     "created_at": "2022-12-18T23:04:48.750Z",
     "is_published": true,
-    "title": "Наблюдения",
+    "title": "Nablyudeniya",
     "slug": "details",
-    "description": "Мир полон важными событиями и деталями, о которых не пишут в газетах и не говорят по ТВ. Рассказывайте здесь обо всём, что видите вокруг себя!"
+    "description": "Mir polon vazhnymi sobytiyami i detalyami, o kotorykh ne pishut v gazetakh i ne govoryat po TV. Rasskazyvaite zdes obo vsem, chto vidite vokrug sebya!"
   }
 },
 {
@@ -38,9 +38,9 @@
   "fields": {
     "created_at": "2022-12-18T23:05:14.572Z",
     "is_published": true,
-    "title": "Посиделки",
+    "title": "Posidelki",
     "slug": "party",
-    "description": "Вечеринки, встречи, симпозиумы и дискуссии — обо всём этом пишите и читайте в категории «Посиделки». Про интересные zoom-конференции тоже можно."
+    "description": "Vecherinki, vstrechi, simpoziumy i diskussii — obo vsem etom pishite i chitaite v category «Posidelki». Pro interesnye zoom-konferentsii tozhe mozhno."
   }
 },
 {
@@ -49,9 +49,9 @@
   "fields": {
     "created_at": "2022-12-18T23:05:41.354Z",
     "is_published": true,
-    "title": "Путешествия",
+    "title": "Puteshestviya",
     "slug": "travel",
-    "description": "Пишите, читайте и обсуждайте рассказы о путешествиях. Здесь рады всем, кто любит странствия и дорожные байки."
+    "description": "Pishite, chitaite i obsuzhdaite rasskazy o puteshestviyakh. Zdes rady vsem, kto lyubit stranstviya i dorozhnye baiki."
   }
 },
 {
@@ -60,9 +60,9 @@
   "fields": {
     "created_at": "2022-12-18T23:06:07.543Z",
     "is_published": true,
-    "title": "Работа",
+    "title": "Rabota",
     "slug": "work",
-    "description": "Расскажите о своей работе и о том, что вы делаете сейчас. Это категория для публикаций трудоголиков-экстравертов, добро пожаловать!"
+    "description": "Rasskazhite o svoei rabote i o tom, chto vy delaete seichas. Eto category dlya posts trudogolikov-ekstravertov, dobro pozhalovat!"
   }
 },
 {
@@ -71,7 +71,7 @@
   "fields": {
     "created_at": "2022-12-18T23:00:36.479Z",
     "is_published": true,
-    "name": "Байона"
+    "name": "Baiona"
   }
 },
 {
@@ -80,7 +80,7 @@
   "fields": {
     "created_at": "2022-12-18T23:00:51.057Z",
     "is_published": true,
-    "name": "Биарриц"
+    "name": "Biarrits"
   }
 },
 {
@@ -89,7 +89,7 @@
   "fields": {
     "created_at": "2022-12-18T23:01:08.177Z",
     "is_published": true,
-    "name": "Мелихово"
+    "name": "Melikhovo"
   }
 },
 {
@@ -98,7 +98,7 @@
   "fields": {
     "created_at": "2022-12-18T23:01:15.237Z",
     "is_published": true,
-    "name": "Монте-Карло"
+    "name": "Monte-Karlo"
   }
 },
 {
@@ -107,7 +107,7 @@
   "fields": {
     "created_at": "2022-12-18T23:01:34.377Z",
     "is_published": true,
-    "name": "Москва"
+    "name": "Moskva"
   }
 },
 {
@@ -116,7 +116,7 @@
   "fields": {
     "created_at": "2022-12-18T23:01:47.101Z",
     "is_published": true,
-    "name": "Никольское-Обольяниново"
+    "name": "Nikolskoe-Obolyaninovo"
   }
 },
 {
@@ -125,7 +125,7 @@
   "fields": {
     "created_at": "2022-12-18T23:02:04.372Z",
     "is_published": true,
-    "name": "Ницца"
+    "name": "Nitstsa"
   }
 },
 {
@@ -134,7 +134,7 @@
   "fields": {
     "created_at": "2022-12-18T23:02:08.988Z",
     "is_published": true,
-    "name": "Париж"
+    "name": "Parizh"
   }
 },
 {
@@ -143,7 +143,7 @@
   "fields": {
     "created_at": "2022-12-18T23:02:15.074Z",
     "is_published": true,
-    "name": "Петербург"
+    "name": "Peterburg"
   }
 },
 {
@@ -152,7 +152,7 @@
   "fields": {
     "created_at": "2022-12-18T23:02:34.910Z",
     "is_published": true,
-    "name": "Серпухов"
+    "name": "Serpukhov"
   }
 },
 {
@@ -161,7 +161,7 @@
   "fields": {
     "created_at": "2022-12-18T23:02:38.961Z",
     "is_published": true,
-    "name": "Тверь"
+    "name": "Tver"
   }
 },
 {
@@ -170,7 +170,7 @@
   "fields": {
     "created_at": "2022-12-18T23:02:43.798Z",
     "is_published": true,
-    "name": "Торжок"
+    "name": "Torzhok"
   }
 },
 {
@@ -179,8 +179,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:18.993Z",
     "is_published": true,
-    "title": "Обед",
-    "text": "Обед у В. А. Морозовой. Были Чупров, Соболевский, Бларамберг, Саблин и я.",
+    "title": "Obed",
+    "text": "Obed u V. A. Morozovoi. Byli Chuprov, Sobolevskii, Blaramberg, Sablin i ya.",
     "pub_date": "1897-02-13T00:00:00Z",
     "author": 3,
     "category": 4,
@@ -193,8 +193,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:18.995Z",
     "is_published": true,
-    "title": "Блины",
-    "text": "15 февр. Блины у Солдатенкова. Были только я и Гольцев. Много хороших картин, но почти все они дурно повешены. После блинов поехали к Левитану, у которого Солдатенков купил картину и два этюда за 1 100 р. Знакомство с Поленовым. Вечером был у проф. Остроумова; говорит, что Левитану «не миновать смерти». Сам он болен и, по-видимому, трусит.",
+    "title": "Bliny",
+    "text": "15 fevr. Bliny u Soldatenkova. Byli tolko ya i Goltsev. Mnogo khoroshikh kartin, no pochti vse oni durno povesheny. Posle blinov poekhali k Levitanu, u kotorogo Soldatenkov kupil kartinu i dva etyuda za 1 100 r. Znakomstvo s Fieldnovym. Vecherom byl u prof. Ostroumova; govorit, chto Levitanu «ne minovat smerti». Sam on bolen i, po-vidimomu, trusit.",
     "pub_date": "1897-02-15T00:00:00Z",
     "author": 3,
     "category": 4,
@@ -207,8 +207,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:18.998Z",
     "is_published": true,
-    "title": "Собрались в редакции «Русской мысли»",
-    "text": "16 февр. вечером собрались в редакции «Русской мысли», чтобы поговорить о народном театре. Проект Шехтеля всем нравится.",
+    "title": "Sobralis v redaktsii «Russkoi mysli»",
+    "text": "16 fevr. vecherom sobralis v redaktsii «Russkoi mysli», chtoby pogovorit o narodnom teatre. Proekt Shekhtelya vsem nravitsya.",
     "pub_date": "1897-02-16T00:00:00Z",
     "author": 3,
     "category": 4,
@@ -221,8 +221,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.001Z",
     "is_published": true,
-    "title": "Обед в «Континентале»",
-    "text": "19-го февр. обед в «Континентале» в память великой реформы. Скучно и нелепо. Обедать, пить шампанское, галдеть, говорить речи на тему о народном самосознании, о народной совести, свободе и т. п. в то время, когда кругом стола снуют рабы во фраках, те же крепостные, и на улице, на морозе ждут кучера, — это значит лгать святому духу.",
+    "title": "Obed v «Kontinentale»",
+    "text": "19-go fevr. obed v «Kontinentale» v pamyat velikoi reformy. Skuchno i nelepo. Obedat, pit shampanskoe, galdet, govorit rechi na temu o narodnom samosoznanii, o narodnoi sovesti, svobode i t. p. v to vremya, kogda krugom stola snuyut raby vo frakakh, te zhe krepostnye, i na ulitse, na moroze zhdut kuchera, — eto znachit lgat svyatomu dukhu.",
     "pub_date": "1897-02-19T00:00:00Z",
     "author": 3,
     "category": 4,
@@ -235,8 +235,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.004Z",
     "is_published": true,
-    "title": "Любительский спектакль",
-    "text": "22 февр. поехал в Серпухов на любительский спектакль в пользу Новосельской школы. До Царицына меня провожала Ганнеле-Озерова, маленькая королева в изгнании, — актриса, воображающая себя великой, необразованная и немножко вульгарная.",
+    "title": "Lyubitelskii spektakl",
+    "text": "22 fevr. poekhal v Serpukhov na lyubitelskii spektakl v polzu Novoselskoi shkoly. Do Tsaritsyna menya provozhala Gannele-Ozerova, malenkaya koroleva v izgnanii, — aktrisa, voobrazhayushchaya sebya velikoi, neobrazovannaya i nemnozhko vulgarnaya.",
     "pub_date": "1897-02-22T00:00:00Z",
     "author": 3,
     "category": 1,
@@ -249,8 +249,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.006Z",
     "is_published": true,
-    "title": "Кровохарканье",
-    "text": "С 25 марта по 10 апреля лежал в клинике Остроумова. Кровохарканье. В обеих верхушках хрипы, выдох; в правой притупление. 28 марта приходил ко мне Толстой Л. Н.; говорили о бессмертии. Я рассказал ему содержание рассказа Носилова «Театр у вогулов» — и он, по-видимому, прослушал с большим удовольствием.",
+    "title": "Krovokharkane",
+    "text": "S 25 marta po 10 aprelya lezhal v klinike Ostroumova. Krovokharkane. V obeikh verkhushkakh khripy, vydokh; v pravoi prituplenie. 28 marta prikhodil ko mne Tolstoi L. N.; govorili o bessmertii. Ya rasskazal emu soderzhanie rasskaza Nosilova «Teatr u vogulov» — i on, po-vidimomu, proslushal s bolshim udovolstviem.",
     "pub_date": "1897-04-10T00:00:00Z",
     "author": 3,
     "category": 2,
@@ -263,8 +263,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.009Z",
     "is_published": true,
-    "title": "Приезжал ко мне Иван Щеглов",
-    "text": "Приезжал ко мне Иван Щеглов. Благодарит за чай и обед, извиняется, боится опоздать на поезд, много говорит, часто вспоминает о своей жене, как гоголевский Мижуев, сует для прочтения корректуру своей пьесы — то один лист, то другой, хохочет, бранит Меньшикова, которого «проглотил» Толстой, уверяет, что застрелил бы Стасюлевича, если бы последний в качестве президента республики присутствовал на параде, опять хохочет, пачкает свои усы щами, мало ест — и все-таки в конце концов добрый человек.",
+    "title": "Priezzhal ko mne Ivan Shcheglov",
+    "text": "Priezzhal ko mne Ivan Shcheglov. Blagodarit za chai i obed, izvinyaetsya, boitsya opozdat na poezd, mnogo govorit, chasto vspominaet o svoei zhene, kak gogolevskii Mizhuev, suet dlya prochteniya korrekturu svoei pesy — to odin list, to drugoi, khokhochet, branit Menshikova, kotorogo «proglotil» Tolstoi, uveryaet, chto zastrelil by Stasyulevicha, esli by poslednii v kachestve prezidenta respubliki prisutstvoval na parade, opyat khokhochet, pachkaet svoi usy shchami, malo est — i vse-taki v kontse kontsov dobryi chelovek.",
     "pub_date": "1897-05-01T00:00:00Z",
     "author": 3,
     "category": 1,
@@ -277,8 +277,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.012Z",
     "is_published": true,
-    "title": "Гости",
-    "text": "Приходили в гости монахи из монастыря. Приезжала Даша Мусина-Пушкина, вдова инженера Глебова, убитого на охоте, она же Цикада. Много пела.",
+    "title": "Gosti",
+    "text": "Prikhodili v gosti monakhi iz monastyrya. Priezzhala Dasha Musina-Pushkina, vdova inzhenera Glebova, ubitogo na okhote, ona zhe Tsikada. Mnogo pela.",
     "pub_date": "1897-05-04T00:00:00Z",
     "author": 3,
     "category": 1,
@@ -291,8 +291,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.015Z",
     "is_published": true,
-    "title": "Две школы",
-    "text": "24 мая экзаменовал в Чиркове две школы: Чирковскую и Михайловскую.",
+    "title": "Dve shkoly",
+    "text": "24 maya ekzamenoval v Chirkove dve shkoly: Chirkovskuyu i Mikhailovskuyu.",
     "pub_date": "1897-05-24T00:00:00Z",
     "author": 3,
     "category": 1,
@@ -305,8 +305,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.018Z",
     "is_published": true,
-    "title": "Освящение школы в Новоселках",
-    "text": "13 июля было освящение школы в Новоселках, которую я строил. Крестьяне поднесли мне образ с надписью. Земство отсутствовало.",
+    "title": "Osvyashchenie shkoly v Novoselkakh",
+    "text": "13 iyulya bylo osvyashchenie shkoly v Novoselkakh, kotoruyu ya stroil. Krestyane podnesli mne obraz s nadpisyu. Zemstvo otsutstvovalo.",
     "pub_date": "1897-07-13T00:00:00Z",
     "author": 3,
     "category": 1,
@@ -319,8 +319,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.020Z",
     "is_published": true,
-    "title": "Меня пишет художник",
-    "text": "Меня пишет художник Браз (для Третьяковской галереи). Позирую по два раза в день.",
+    "title": "Menya pishet khudozhnik",
+    "text": "Menya pishet khudozhnik Braz (dlya Tretyakovskoi galerei). Poziruyu po dva raza v den.",
     "pub_date": "1897-07-13T00:00:00Z",
     "author": 3,
     "category": 1,
@@ -333,8 +333,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.023Z",
     "is_published": true,
-    "title": "Медаль",
-    "text": "Получил медаль за перепись.",
+    "title": "Medal",
+    "text": "Poluchil medal za perepis.",
     "pub_date": "1897-07-22T00:00:00Z",
     "author": 3,
     "category": 1,
@@ -347,8 +347,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.026Z",
     "is_published": true,
-    "title": "Я в Петербурге",
-    "text": "Я в Петербурге. Остановился у Суворина, в зале. Виделся с Вл. Тихоновым, который жаловался на свою истерию и хвалил свои произведения; виделся с П. Гнедичем и с Евт<ихием> Карповым, показывавшим мне, как Лейкин играл испанского гранда.",
+    "title": "Ya v Peterburge",
+    "text": "Ya v Peterburge. Ostanovilsya u Suvorina, v zale. Videlsya s Vl. Tikhonovym, kotoryi zhalovalsya na svoyu isteriyu i khvalil svoi proizvedeniya; videlsya s P. Gnedichem i s Evt<ikhiem> Karpovym, pokazyvavshim mne, kak Leikin igral ispanskogo granda.",
     "pub_date": "1897-07-23T00:00:00Z",
     "author": 3,
     "category": 1,
@@ -361,8 +361,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.029Z",
     "is_published": true,
-    "title": "Клопы",
-    "text": "27 июля у Лейкина в Ивановском. 28-го в Москве. В редакции «Русской мысли», в диване клопы.",
+    "title": "Klopy",
+    "text": "27 iyulya u Leikina v Ivanovskom. 28-go v Moskve. V redaktsii «Russkoi mysli», v divane klopy.",
     "pub_date": "1897-07-28T00:00:00Z",
     "author": 3,
     "category": 3,
@@ -375,8 +375,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.032Z",
     "is_published": true,
-    "title": "Париж",
-    "text": "Приехал в Париж. Moulin rouge, danse du ventre, Café du Néan с гробами, Café du Ciel и проч.",
+    "title": "Parizh",
+    "text": "Priekhal v Parizh. Moulin rouge, danse du ventre, Café du Néan s grobami, Café du Ciel i proch.",
     "pub_date": "1897-09-04T00:00:00Z",
     "author": 3,
     "category": 5,
@@ -389,8 +389,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.034Z",
     "is_published": true,
-    "title": "Здесь много русских",
-    "text": "В Биаррице. Здесь В. М. Соболевский и В. А. Морозова. Каждый русский в Биаррице жалуется, что здесь много русских.",
+    "title": "Zdes mnogo russkikh",
+    "text": "V Biarritse. Zdes V. M. Sobolevskii i V. A. Morozova. Kazhdyi russkii v Biarritse zhaluetsya, chto zdes mnogo russkikh.",
     "pub_date": "1897-09-08T00:00:00Z",
     "author": 3,
     "category": 5,
@@ -403,8 +403,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.037Z",
     "is_published": true,
-    "title": "Бой с коровами",
-    "text": "Байона. Grande course landaise. Бой с коровами.",
+    "title": "Boi s korovami",
+    "text": "Baiona. Grande course landaise. Boi s korovami.",
     "pub_date": "1897-09-14T00:00:00Z",
     "author": 3,
     "category": 5,
@@ -417,8 +417,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.039Z",
     "is_published": true,
-    "title": "Дорога",
-    "text": "Из Биаррица в Ниццу через Тулузу.",
+    "title": "Doroga",
+    "text": "Iz Biarritsa v Nitstsu cherez Tuluzu.",
     "pub_date": "1897-09-22T00:00:00Z",
     "author": 3,
     "category": 5,
@@ -431,8 +431,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.042Z",
     "is_published": true,
-    "title": "Знакомство с Максимом Ковалевским",
-    "text": "Ницца. Поселился в Pension Russe. Знакомство с Максимом Ковалевским, завтраки у него в Beaulieu, в обществе Н. И. Юрасова и художника Якоби. В Монте-Карло.",
+    "title": "Znakomstvo s Maksimom Kovalevskim",
+    "text": "Nitstsa. Poselilsya v Pension Russe. Znakomstvo s Maksimom Kovalevskim, zavtraki u nego v Beaulieu, v obshchestve N. I. Yurasova i khudozhnika Yakobi. V Monte-Karlo.",
     "pub_date": "1897-09-23T00:00:00Z",
     "author": 3,
     "category": 4,
@@ -445,8 +445,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.046Z",
     "is_published": true,
-    "title": "Признания шпиона",
-    "text": "Признания шпиона.",
+    "title": "Priznaniya shpiona",
+    "text": "Priznaniya shpiona.",
     "pub_date": "1897-10-07T00:00:00Z",
     "author": 3,
     "category": 6,
@@ -459,8 +459,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.049Z",
     "is_published": true,
-    "title": "Неприятное зрелище",
-    "text": "Видел, как мать Башкирцевой играла в рулетку. Неприятное зрелище.",
+    "title": "Nepriyatnoe zrelishche",
+    "text": "Videl, kak mat Bashkirtsevoi igrala v ruletku. Nepriyatnoe zrelishche.",
     "pub_date": "1897-10-09T00:00:00Z",
     "author": 3,
     "category": 3,
@@ -473,8 +473,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.052Z",
     "is_published": true,
-    "title": "Кража",
-    "text": "Монте-Карло. Я видел, как крупье украл золотой.",
+    "title": "Krazha",
+    "text": "Monte-Karlo. Ya videl, kak krupe ukral zolotoi.",
     "pub_date": "1897-11-15T00:00:00Z",
     "author": 3,
     "category": 3,
@@ -487,8 +487,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.055Z",
     "is_published": true,
-    "title": "Покупки",
-    "text": "Приехав от губернатора, я с Гурием Николаевичем отправился для разных покупок. Купили масла чухонского, спирту, колбасы и рыбы. Стерлядь 8 вершков стоит 50 коп. серебром, не дешевле московского. Изготовили стерлядь в паровой кастрюле и поели с большим вкусом. Вечером опять ходили на набережную; все то же, что и вчера, только розовых платков больше. Вода сбыла с лишком на сажень и близ набережной стояли два изящных парохода. Ночь провел еще беспокойнее, чем вчера; теперь чувствую себя довольно хорошо.",
+    "title": "Pokupki",
+    "text": "Priekhav ot gubernatora, ya s Guriem Nikolaevichem otpravilsya dlya raznykh pokupok. Kupili masla chukhonskogo, spirtu, kolbasy i ryby. Sterlyad 8 vershkov stoit 50 kop. serebrom, ne deshevle moskovskogo. Izgotovili sterlyad v parovoi kastryule i poeli s bolshim vkusom. Vecherom opyat khodili na naberezhnuyu; vse to zhe, chto i vchera, tolko rozovykh platkov bolshe. Voda sbyla s lishkom na sazhen i bliz naberezhnoi stoyali dva izyashchnykh parokhoda. Noch provel eshche bespokoinee, chem vchera; teper chuvstvuyu sebya dovolno khorosho.",
     "pub_date": "1856-04-20T00:00:00Z",
     "author": 4,
     "category": 1,
@@ -501,8 +501,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.059Z",
     "is_published": true,
-    "title": "Отдохнули",
-    "text": "Вчера поутру был у купца Н. Я. Ворошилова, который обещал сообщить разные сведения о судостроении и судоходстве. Заходил к чудаку купцу Лаврову, который может быть полезен по охоте и рыбной ловле. Потом изготовили для себя бифштекс с картофелем и пообедали. После обеда ходили за Тьмаку удить рыбу. Охотников довольно, и, как видно, очень ловких, но берет только уклейка, потому мы, не ловивши и очень уставши, вернулись домой довольно рано. Отдохнули, поужинали и легли спать. Ночь провел несколько покойнее. Я догадался, отчего у меня по ночам бывает волнение: я, после сидячей жизни, вдруг начал делать очень много движения. Вчера я ходил в одном сюртуке, и то было жарко, вечером слышали первый гром, и шел небольшой дождь. На улицах народной жизни совершенно не заметно, песен вовсе не слыхать. Сегодня поутру должен был отправиться первый пароход из Твери с пассажирами; мы встали в 7-м часу и пошли на набережную; но пароход почему-то не пошел. Рядом с двумя первыми стоит третий пароход точно такой же величины и изящества, так что их трудно отличить один от другого. Пришли домой и занялись чаем, явился купец Лавров и между прочими рассказами уведомил нас, что в Твери страшные грабежи. Когда я спросил, отчего не слыхать песен, он отвечал, что полиция гораздо строже смотрит на песни, чем на грабежи.",
+    "title": "Otdokhnuli",
+    "text": "Vchera poutru byl u kuptsa N. Ya. Voroshilova, kotoryi obeshchal soobshchit raznye svedeniya o sudostroenii i sudokhodstve. Zakhodil k chudaku kuptsu Lavrovu, kotoryi mozhet byt fieldzen po okhote i rybnoi lovle. Potom izgotovili dlya sebya bifshteks s kartofelem i poobedali. Posle obeda khodili za Tmaku udit rybu. Okhotnikov dovolno, i, kak vidno, ochen lovkikh, no beret tolko ukleika, potomu my, ne lovivshi i ochen ustavshi, vernulis domoi dovolno rano. Otdokhnuli, pouzhinali i legli spat. Noch provel neskolko pokoinee. Ya dogadalsya, otchego u menya po nocham byvaet volnenie: ya, posle sidyachei zhizni, vdrug nachal delat ochen mnogo dvizheniya. Vchera ya khodil v odnom syurtuke, i to bylo zharko, vecherom slyshali pervyi grom, i shel nebolshoi dozhd. Na ulitsakh narodnoi zhizni sovershenno ne zametno, pesen vovse ne slykhat. Segodnya poutru dolzhen byl otpravitsya pervyi parokhod iz Tveri s passazhirami; my vstali v 7-m chasu i poshli na naberezhnuyu; no parokhod pochemu-to ne poshel. Ryadom s dvumya pervymi stoit tretii parokhod tochno takoi zhe velichiny i izyashchestva, tak chto ikh trudno otlichit odin ot drugogo. Prishli domoi i zanyalis chaem, yavilsya kupets Lavrov i mezhdu prochimi rasskazami uvedomil nas, chto v Tveri strashnye grabezhi. Kogda ya sprosil, otchego ne slykhat pesen, on otvechal, chto politsiya gorazdo strozhe smotrit na pesni, chem na grabezhi.",
     "pub_date": "1856-04-21T00:00:00Z",
     "author": 4,
     "category": 4,
@@ -515,8 +515,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.062Z",
     "is_published": true,
-    "title": "Ходили за Тьмаку.",
-    "text": "В субботу вместе с Лавровым ходили за Тьмаку. Смотрели суконную фабрику, выстроенную компанией московских купцов в огромных; размерах. Берега Тьмаки усеяны рыболовами, которые ловят на удочку уклейку. Один рыбак (вероятно, охотник) ловил рыбу, стоя в маленьком челноке, который имел не более вершка запасу над водой и менее 2 сажен длины. Управляя одним веслом, он закидывал небольшую сеть, узкую и длинную, с поплавками, чтобы она одной стороной держалась на воде, собирал ее, выбирал и бросал в челнок, и все это с неимоверным соблюдением баланса, иначе он непременно должен был опрокинуться и с челноком. Вечер провели дома в разных занятиях. В воскресенье ездили смотреть заволжские кварталы. Вечером был Лавров, наболтал с три короба, -- впрочем, говорил и дело, -- о злоупотреблениях градских голов. Сегодня за дело, довольно гулять. Еду к разным должностным лицам.",
+    "title": "Khodili za Tmaku.",
+    "text": "V subbotu vmeste s Lavrovym khodili za Tmaku. Smotreli sukonnuyu fabriku, vystroennuyu kompaniei moskovskikh kuptsov v ogromnykh; razmerakh. Berega Tmaki useyany rybolovami, kotorye lovyat na udochku ukleiku. Odin rybak (veroyatno, okhotnik) lovil rybu, stoya v malenkom chelnoke, kotoryi imel ne bolee vershka zapasu nad vodoi i menee 2 sazhen dliny. Upravlyaya odnim veslom, on zakidyval nebolshuyu set, uzkuyu i dlinnuyu, s poplavkami, chtoby ona odnoi storonoi derzhalas na vode, sobiral ee, vybiral i brosal v chelnok, i vse eto s neimovernym soblyudeniem balansa, inache on nepremenno dolzhen byl oprokinutsya i s chelnokom. Vecher proveli doma v raznykh zanyatiyakh. V voskresene ezdili smotret zavolzhskie kvartaly. Vecherom byl Lavrov, naboltal s tri koroba, -- vprochem, govoril i delo, -- o zloupotrebleniyakh gradskikh golov. Segodnya za delo, dovolno gulyat. Edu k raznym dolzhnostnym litsam.",
     "pub_date": "1856-04-23T00:00:00Z",
     "author": 4,
     "category": 3,
@@ -529,8 +529,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.066Z",
     "is_published": true,
-    "title": "Просидел весь день дома",
-    "text": "В понедельник утром был у Колышкина. Он еще в Москве. По случаю табельного дня должностные лица были у обедни. Просидел весь день дома. Вчера поутру часов в 6 ходили смотреть, как отходят пароходы, был у Колышкина, он все еще не приезжал. По случаю дурной погоды просидел вечер дома. Сегодня еду опять к Колышкину. Что-то бог даст?",
+    "title": "Prosidel ves den doma",
+    "text": "V ponedelnik utrom byl u Kolyshkina. On eshche v Moskve. Po sluchayu tabelnogo dnya dolzhnostnye litsa byli u obedni. Prosidel ves den doma. Vchera poutru chasov v 6 khodili smotret, kak otkhodyat parokhody, byl u Kolyshkina, on vse eshche ne priezzhal. Po sluchayu durnoi pogody prosidel vecher doma. Segodnya edu opyat k Kolyshkinu. Chto-to bog dast?",
     "pub_date": "1856-04-25T00:00:00Z",
     "author": 4,
     "category": 1,
@@ -543,8 +543,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.068Z",
     "is_published": true,
-    "title": "Пообедали в трактире",
-    "text": "В середу Колышкина не застал. Пообедали в трактире. В 5-м часу поехал на железную дорогу в надежде встретить Григорьева, Григорьев не приехал. На станции встретил Д. Г. Ржевского, о котором совсем было забыл. Виделся с Краевским, который ехал в Петербург. Вечером был у Ржевского, там возобновил знакомство с Уньковским, с которым познакомился в прошлый приезд в Тверь. Он теперь судьей; человек веселый, открытый и очень умный. В четверг утром был у Колышкина и нашел в нем весьма дельного и милого человека. Он обещал сообщить мне все сведения, какие может. Обедал дома. Вечером играли с Лавровым в карты. Сегодня сижу дома, жду визитов. Вот уже четвертый день ненастная погода мешает мне ловить рыбу, а сегодня даже очень холодно.",
+    "title": "Poobedali v traktire",
+    "text": "V seredu Kolyshkina ne zastal. Poobedali v traktire. V 5-m chasu poekhal na zheleznuyu dorogu v nadezhde vstretit Grigoreva, Grigorev ne priekhal. Na stantsii vstretil D. G. Rzhevskogo, o kotorom sovsem bylo zabyl. Videlsya s Kraevskim, kotoryi ekhal v Peterburg. Vecherom byl u Rzhevskogo, tam vozobnovil znakomstvo s Unkovskim, s kotorym poznakomilsya v proshlyi priezd v Tver. On teper sudei; chelovek veselyi, otkrytyi i ochen umnyi. V chetverg utrom byl u Kolyshkina i nashel v nem vesma delnogo i milogo cheloveka. On obeshchal soobshchit mne vse svedeniya, kakie mozhet. Obedal doma. Vecherom igrali s Lavrovym v karty. Segodnya sizhu doma, zhdu vizitov. Vot uzhe chetvertyi den nenastnaya pogoda meshaet mne lovit rybu, a segodnya dazhe ochen kholodno.",
     "pub_date": "1856-04-27T00:00:00Z",
     "author": 4,
     "category": 4,
@@ -557,8 +557,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.071Z",
     "is_published": true,
-    "title": "Колышкин",
-    "text": "Среди дня был Колышкин, привез описание Тверской губернии и обещал доставить в понедельник сведения. Вечером был у Ржевского. Там был Уньковский и учитель Гарусов (чудак естественный); провели время очень приятно. Вчера поутру был дома. Заезжал Уньковский. Обедал у него. Были Ржевский, Гэрусов и Козаков, человек замечательный, хотя тоже чудак. Ездил на дорогу встречать Ганю. Часов в 7 гуляли, показывал ей Тверь. Вечером был Лавров. Сегодня поутру ходили на рынок, купили сморчков, отличные удилища, каких нет в Москве, по 2 копейки серебром.",
+    "title": "Kolyshkin",
+    "text": "Sredi dnya byl Kolyshkin, privez opisanie Tverskoi gubernii i obeshchal dostavit v ponedelnik svedeniya. Vecherom byl u Rzhevskogo. Tam byl Unkovskii i uchitel Garusov (chudak estestvennyi); proveli vremya ochen priyatno. Vchera poutru byl doma. Zaezzhal Unkovskii. Obedal u nego. Byli Rzhevskii, Gerusov i Kozakov, chelovek zamechatelnyi, khotya tozhe chudak. Ezdil na dorogu vstrechat Ganyu. Chasov v 7 gulyali, pokazyval ei Tver. Vecherom byl Lavrov. Segodnya poutru khodili na rynok, kupili smorchkov, otlichnye udilishcha, kakikh net v Moskve, po 2 kopeiki serebrom.",
     "pub_date": "1856-04-29T00:00:00Z",
     "author": 4,
     "category": 4,
@@ -571,8 +571,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.074Z",
     "is_published": true,
-    "title": "Ночь не спал",
-    "text": "Середа. 2-е мая. 10 часов утра.\r\n(Продолжение). Пообедали дома, потом ходили рыбу ловить. Поймали только двух окуней. Вечером был Лавров, играли в карты. В понедельник до вечера просидел с Ганей дома. Был Уньковский. Вечером ходил не надолго к Колышкину. Там познакомился с Преображенским. Поужинали дома, ночь не спал. Ездил провожать Ганю на дорогу, видели превосходное утро и восход солнца. Поутру гуляли по набережной. После обеда был Преображенский, наговорил много хорошего. Вечером был у Ржевских.",
+    "title": "Noch ne spal",
+    "text": "Sereda. 2-e maya. 10 chasov utra.\r\n(Prodolzhenie). Poobedali doma, potom khodili rybu lovit. Poimali tolko dvukh okunei. Vecherom byl Lavrov, igrali v karty. V ponedelnik do vechera prosidel s Ganei doma. Byl Unkovskii. Vecherom khodil ne nadolgo k Kolyshkinu. Tam poznakomilsya s Preobrazhenskim. Pouzhinali doma, noch ne spal. Ezdil provozhat Ganyu na dorogu, videli prevoskhodnoe utro i voskhod solntsa. Poutru gulyali po naberezhnoi. Posle obeda byl Preobrazhenskii, nagovoril mnogo khoroshego. Vecherom byl u Rzhevskikh.",
     "pub_date": "1856-05-02T00:00:00Z",
     "author": 4,
     "category": 4,
@@ -585,8 +585,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.077Z",
     "is_published": true,
-    "title": "Продолжение",
-    "text": "Суббота. 5 мая (продолжение).\r\nВчера по дороге из Городни заезжали в Кошелево к священнику, у которого думали найти документы о Городне, но нашли только то, что уже видел Преображенский. Часа в 2 приехали в Тверь. Вечером был у Уньковского и познакомился там с Потуловым, назначенным губернатором в Оренбург. Сегодня были Уньковский и Лавров, просидел дома. Начал статью о Городне.",
+    "title": "Prodolzhenie",
+    "text": "Subbota. 5 maya (prodolzhenie).\r\nVchera po doroge iz Gorodni zaezzhali v Koshelevo k svyashchenniku, u kotorogo dumali naiti dokumenty o Gorodne, no nashli tolko to, chto uzhe videl Preobrazhenskii. Chasa v 2 priekhali v Tver. Vecherom byl u Unkovskogo i poznakomilsya tam s Potulovym, naznachennym gubernatorom v Orenburg. Segodnya byli Unkovskii i Lavrov, prosidel doma. Nachal statyu o Gorodne.",
     "pub_date": "1856-05-05T00:00:00Z",
     "author": 4,
     "category": 6,
@@ -599,8 +599,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.080Z",
     "is_published": true,
-    "title": "Получил Русскую беседу",
-    "text": "Получил Русскую беседу и письмо Дрианского, с приложением Городского листка, где подлецы, воспользовавшись моим отсутствием, изблевали новую гадость. Напишу об этом в Московские ведомости. Был очень огорчен и не мог ни за что приняться.",
+    "title": "Poluchil Russkuyu besedu",
+    "text": "Poluchil Russkuyu besedu i pismo Drianskogo, s applicationm Gorodskogo listka, gde podletsy, vospolzovavshis moim otsutstviem, izblevali novuyu gadost. Napishu ob etom v Moskovskie vedomosti. Byl ochen ogorchen i ne mog ni za chto prinyatsya.",
     "pub_date": "1856-05-06T00:00:00Z",
     "author": 4,
     "category": 1,
@@ -613,8 +613,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.083Z",
     "is_published": true,
-    "title": "Немного успокоился",
-    "text": "Вчера читал Русскую беседу и немного успокоился. Вечером был Колышкин. Сегодня еду в статистический комитет и к губернатору.",
+    "title": "Nemnogo uspokoilsya",
+    "text": "Vchera chital Russkuyu besedu i nemnogo uspokoilsya. Vecherom byl Kolyshkin. Segodnya edu v statisticheskii komitet i k gubernatoru.",
     "pub_date": "1856-05-08T00:00:00Z",
     "author": 4,
     "category": 1,
@@ -627,8 +627,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.086Z",
     "is_published": true,
-    "title": "Поздравил Колышкина",
-    "text": "Вчера у губернатора не был, нельзя было ехать Колышкину. Сегодня был у Колышкина, поздравил его с ангелом. Ездили с ним к губернатору, который принял нас очень хорошо. Обедал у Уньковского, там были Ржевский, инспектор Оренбургской губернии и Козаков; читал \"Свои люди -- сочтемся\".",
+    "title": "Pozdravil Kolyshkina",
+    "text": "Vchera u gubernatora ne byl, nelzya bylo ekhat Kolyshkinu. Segodnya byl u Kolyshkina, pozdravil ego s angelom. Ezdili s nim k gubernatoru, kotoryi prinyal nas ochen khorosho. Obedal u Unkovskogo, tam byli Rzhevskii, inspektor Orenburgskoi gubernii i Kozakov; chital \"Svoi lyudi -- sochtemsya\".",
     "pub_date": "1856-05-09T00:00:00Z",
     "author": 4,
     "category": 4,
@@ -641,8 +641,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.088Z",
     "is_published": true,
-    "title": "Полночь. Торжок.",
-    "text": "10 мая. 12 часов. Полночь. Торжок.\r\nСегодня поутру собирались. Пообедали, взяли Лаврова с собой и поехали в Торжок.",
+    "title": "Polnoch. Torzhok.",
+    "text": "10 maya. 12 chasov. Polnoch. Torzhok.\r\nSegodnya poutru sobiralis. Poobedali, vzyali Lavrova s soboi i poekhali v Torzhok.",
     "pub_date": "1856-05-10T00:00:00Z",
     "author": 4,
     "category": 5,
@@ -655,8 +655,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.091Z",
     "is_published": true,
-    "title": "Ходили по городу",
-    "text": "Ходили по городу, который расположен на горах. Вид с бульвара на ту сторону Тверцы выше всякой похвалы. Был городничий. Потом был винный пристав Развадовский (рыболов). Рекомендовался так: честь имею представиться, человек с большими усами и малыми способностями. Замечателен костюм здешних женщин и гулянье девушек по вечерам на бульваре.",
+    "title": "Khodili po gorodu",
+    "text": "Khodili po gorodu, kotoryi raspolozhen na gorakh. Vid s bulvara na tu storonu Tvertsy vyshe vsyakoi pokhvaly. Byl gorodnichii. Potom byl vinnyi pristav Razvadovskii (rybolov). Rekomendovalsya tak: chest imeyu predstavitsya, chelovek s bolshimi usami i malymi sposobnostyami. Zamechatelen kostyum zdeshnikh zhenshchin i gulyane devushek po vecheram na bulvare.",
     "pub_date": "1856-05-11T00:00:00Z",
     "author": 4,
     "category": 3,
@@ -669,8 +669,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.094Z",
     "is_published": true,
-    "title": "Жив. Совершенно здоров.",
-    "text": "Жив. Совершенно здоров. Нынче писал доволь[но] хорошо. Вечером после обеда ходил в Щелково. Очень была приятна прогулка при лунном свете. Написал письмо Поше, открытое. Получил письмо от Трегубова. Раздражается за то, что перехватывают письма. А я не досадую. Понял, что надо жалеть их, и истинно жалею. Завтра едем. Мы здесь целый месяц.",
+    "title": "Zhiv. Sovershenno zdorov.",
+    "text": "Zhiv. Sovershenno zdorov. Nynche pisal dovol[no] khorosho. Vecherom posle obeda khodil v Shchelkovo. Ochen byla priyatna progulka pri lunnom svete. Napisal pismo Poshe, otkrytoe. Poluchil pismo ot Tregubova. Razdrazhaetsya za to, chto perekhvatyvayut pisma. A ya ne dosaduyu. Ponyal, chto nado zhalet ikh, i istinno zhaleyu. Zavtra edem. My zdes tselyi mesyats.",
     "pub_date": "1897-03-02T00:00:00Z",
     "author": 2,
     "category": 6,
@@ -683,8 +683,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.097Z",
     "is_published": true,
-    "title": "Утром почти не занимался",
-    "text": "Утром почти не занимался. Запнулся над историческим ходом искусства. Гулял. После обеда поехал. Приехал в 10. Дома хорошо бы, да не дружно.",
+    "title": "Utrom pochti ne zanimalsya",
+    "text": "Utrom pochti ne zanimalsya. Zapnulsya nad istoricheskim khodom iskusstva. Gulyal. Posle obeda poekhal. Priekhal v 10. Doma khorosho by, da ne druzhno.",
     "pub_date": "1897-03-04T00:00:00Z",
     "author": 2,
     "category": 1,
@@ -697,8 +697,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.099Z",
     "is_published": true,
-    "title": "Батюшки, сколько дней пропустил",
-    "text": "Батюшки, сколько дней пропустил. Нынче 9 Мар. Москва. Из этих 4-х дней дня два писал Об искусстве и нынче довольно много. Очень захотелось писать Х[аджи]-М[урата] и как-то хорошо обдумалось — умилительно. От Поши письмо; написал Ч[ерткову] и Кони о страшном событии с Ветровой. Не буду писать, что записано. Всё в том же спокойном, п[отому] ч[то] любовном настроении. Как только хочется огорчиться, устать, вспомню про Бога и про то, что дело мое одно: любить, не думая о том, что будет, и сейчас легко. Таня уезжает в Ясную.",
+    "title": "Batyushki, skolko dnei propustil",
+    "text": "Batyushki, skolko dnei propustil. Nynche 9 Mar. Moskva. Iz etikh 4-kh dnei dnya dva pisal Ob iskusstve i nynche dovolno mnogo. Ochen zakhotelos pisat Kh[adzhi]-M[urata] i kak-to khorosho obdumalos — umilitelno. Ot Poshi pismo; napisal Ch[ertkovu] i Koni o strashnom sobytii s Vetrovoi. Ne budu pisat, chto zapisano. Vse v tom zhe spokoinom, p[otomu] ch[to] lyubovnom nastroenii. Kak tolko khochetsya ogorchitsya, ustat, vspomnyu pro Boga i pro to, chto delo moe odno: lyubit, ne dumaya o tom, chto budet, i seichas legko. Tanya uezzhaet v Yasnuyu.",
     "pub_date": "1897-03-09T00:00:00Z",
     "author": 2,
     "category": 1,
@@ -711,8 +711,8 @@
   "fields": {
     "created_at": "2022-12-18T23:06:19.102Z",
     "is_published": true,
-    "title": "Не дурно прожил",
-    "text": "Не дурно прожил. Вижу конец в статье об искусстве. Всё то же спокойствие. Благодарю Бога. Сейчас написал письма. Вечер. Иду в скучную гостин[ую].",
+    "title": "Ne durno prozhil",
+    "text": "Ne durno prozhil. Vizhu konets v state ob iskusstve. Vse to zhe spokoistvie. Blagodaryu Boga. Seichas napisal pisma. Vecher. Idu v skuchnuyu gostin[uyu].",
     "pub_date": "1897-03-15T00:00:00Z",
     "author": 2,
     "category": 1,
@@ -805,7 +805,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "1",
-    "object_repr": "Байона",
+    "object_repr": "Baiona",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -818,7 +818,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "2",
-    "object_repr": "Биарриц",
+    "object_repr": "Biarrits",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -831,7 +831,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "3",
-    "object_repr": "Мелихово",
+    "object_repr": "Melikhovo",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -844,7 +844,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "4",
-    "object_repr": "Монте-Карло",
+    "object_repr": "Monte-Karlo",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -857,7 +857,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "5",
-    "object_repr": "Москва",
+    "object_repr": "Moskva",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -870,7 +870,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "6",
-    "object_repr": "Никольское-Обольяниново",
+    "object_repr": "Nikolskoe-Obolyaninovo",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -883,7 +883,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "7",
-    "object_repr": "Ницца",
+    "object_repr": "Nitstsa",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -896,7 +896,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "8",
-    "object_repr": "Париж",
+    "object_repr": "Parizh",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -909,7 +909,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "9",
-    "object_repr": "Петербург",
+    "object_repr": "Peterburg",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -922,7 +922,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "10",
-    "object_repr": "Серпухов",
+    "object_repr": "Serpukhov",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -935,7 +935,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "11",
-    "object_repr": "Тверь",
+    "object_repr": "Tver",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -948,7 +948,7 @@
     "user": 1,
     "content_type": 2,
     "object_id": "12",
-    "object_repr": "Торжок",
+    "object_repr": "Torzhok",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -961,7 +961,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "1",
-    "object_repr": "День как день",
+    "object_repr": "Den kak den",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -974,7 +974,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "2",
-    "object_repr": "Здоровье",
+    "object_repr": "Zdorove",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -987,7 +987,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "3",
-    "object_repr": "Наблюдения",
+    "object_repr": "Nablyudeniya",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -1000,7 +1000,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "4",
-    "object_repr": "Посиделки",
+    "object_repr": "Posidelki",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -1013,7 +1013,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "5",
-    "object_repr": "Путешествия",
+    "object_repr": "Puteshestviya",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -1026,7 +1026,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "6",
-    "object_repr": "Работа",
+    "object_repr": "Rabota",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -1039,7 +1039,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "2",
-    "object_repr": "Блины",
+    "object_repr": "Bliny",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1052,7 +1052,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "22",
-    "object_repr": "Кража",
+    "object_repr": "Krazha",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1065,7 +1065,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "21",
-    "object_repr": "Неприятное зрелище",
+    "object_repr": "Nepriyatnoe zrelishche",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1078,7 +1078,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "20",
-    "object_repr": "Признания шпиона",
+    "object_repr": "Priznaniya shpiona",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1091,7 +1091,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "22",
-    "object_repr": "Кража",
+    "object_repr": "Krazha",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1104,7 +1104,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "21",
-    "object_repr": "Неприятное зрелище",
+    "object_repr": "Nepriyatnoe zrelishche",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1117,7 +1117,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "19",
-    "object_repr": "Знакомство с Максимом Ковалевским",
+    "object_repr": "Znakomstvo s Maksimom Kovalevskim",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1130,7 +1130,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "18",
-    "object_repr": "Дорога",
+    "object_repr": "Doroga",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1143,7 +1143,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "17",
-    "object_repr": "Бой с коровами",
+    "object_repr": "Boi s korovami",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1156,7 +1156,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "16",
-    "object_repr": "Здесь много русских",
+    "object_repr": "Zdes mnogo russkikh",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1169,7 +1169,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "15",
-    "object_repr": "Париж",
+    "object_repr": "Parizh",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1182,7 +1182,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "14",
-    "object_repr": "Клопы",
+    "object_repr": "Klopy",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1195,7 +1195,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "13",
-    "object_repr": "Я в Петербурге",
+    "object_repr": "Ya v Peterburge",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1208,7 +1208,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "12",
-    "object_repr": "Медаль",
+    "object_repr": "Medal",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1221,7 +1221,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "11",
-    "object_repr": "Меня пишет художник",
+    "object_repr": "Menya pishet khudozhnik",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1234,7 +1234,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "10",
-    "object_repr": "Освящение школы в Новоселках",
+    "object_repr": "Osvyashchenie shkoly v Novoselkakh",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1247,7 +1247,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "9",
-    "object_repr": "Две школы",
+    "object_repr": "Dve shkoly",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1260,7 +1260,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "8",
-    "object_repr": "Гости",
+    "object_repr": "Gosti",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1273,7 +1273,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "7",
-    "object_repr": "Приезжал ко мне Иван Щеглов",
+    "object_repr": "Priezzhal ko mne Ivan Shcheglov",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1286,7 +1286,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "6",
-    "object_repr": "Кровохарканье",
+    "object_repr": "Krovokharkane",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1299,7 +1299,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "39",
-    "object_repr": "Не дурно прожил",
+    "object_repr": "Ne durno prozhil",
     "action_flag": 2,
     "change_message": "[]"
   }
@@ -1312,7 +1312,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "38",
-    "object_repr": "Батюшки, сколько дней пропустил",
+    "object_repr": "Batyushki, skolko dnei propustil",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1325,7 +1325,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "37",
-    "object_repr": "Утром почти не занимался",
+    "object_repr": "Utrom pochti ne zanimalsya",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1338,7 +1338,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "36",
-    "object_repr": "Жив. Совершенно здоров.",
+    "object_repr": "Zhiv. Sovershenno zdorov.",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1351,7 +1351,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "5",
-    "object_repr": "Любительский спектакль",
+    "object_repr": "Lyubitelskii spektakl",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1364,7 +1364,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "4",
-    "object_repr": "Обед в «Континентале»",
+    "object_repr": "Obed v «Kontinentale»",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1377,7 +1377,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "3",
-    "object_repr": "Собрались в редакции «Русской мысли»",
+    "object_repr": "Sobralis v redaktsii «Russkoi mysli»",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\"]}}]"
   }
@@ -1390,7 +1390,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "1",
-    "object_repr": "Обед",
+    "object_repr": "Obed",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1403,7 +1403,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "35",
-    "object_repr": "Ходили по городу",
+    "object_repr": "Khodili po gorodu",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1416,7 +1416,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "34",
-    "object_repr": "Полночь. Торжок.",
+    "object_repr": "Polnoch. Torzhok.",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1429,7 +1429,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "33",
-    "object_repr": "Поздравил Колышкина",
+    "object_repr": "Pozdravil Kolyshkina",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1442,7 +1442,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "32",
-    "object_repr": "Немного успокоился",
+    "object_repr": "Nemnogo uspokoilsya",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1455,7 +1455,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "31",
-    "object_repr": "Получил Русскую беседу",
+    "object_repr": "Poluchil Russkuyu besedu",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1468,7 +1468,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "30",
-    "object_repr": "Продолжение",
+    "object_repr": "Prodolzhenie",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1481,7 +1481,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "29",
-    "object_repr": "Ночь не спал",
+    "object_repr": "Noch ne spal",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1494,7 +1494,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "28",
-    "object_repr": "Колышкин",
+    "object_repr": "Kolyshkin",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1507,7 +1507,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "27",
-    "object_repr": "Пообедали в трактире",
+    "object_repr": "Poobedali v traktire",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1520,7 +1520,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "26",
-    "object_repr": "Просидел весь день дома",
+    "object_repr": "Prosidel ves den doma",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1533,7 +1533,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "25",
-    "object_repr": "Ходили за Тьмаку.",
+    "object_repr": "Khodili za Tmaku.",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1546,7 +1546,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "24",
-    "object_repr": "Отдохнули",
+    "object_repr": "Otdokhnuli",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1559,7 +1559,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "23",
-    "object_repr": "Покупки",
+    "object_repr": "Pokupki",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u0417\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043e\\u043a\", \"\\u0422\\u0435\\u043a\\u0441\\u0442\"]}}]"
   }
@@ -1572,7 +1572,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "22",
-    "object_repr": "Кража",
+    "object_repr": "Krazha",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
   }
@@ -1585,7 +1585,7 @@
     "user": 1,
     "content_type": 3,
     "object_id": "22",
-    "object_repr": "Кража",
+    "object_repr": "Krazha",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
   }
@@ -1598,7 +1598,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "3",
-    "object_repr": "Наблюдения",
+    "object_repr": "Nablyudeniya",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
   }
@@ -1611,7 +1611,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "3",
-    "object_repr": "Наблюдения",
+    "object_repr": "Nablyudeniya",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
   }
@@ -1624,7 +1624,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "6",
-    "object_repr": "Работа",
+    "object_repr": "Rabota",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
   }
@@ -1637,7 +1637,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "4",
-    "object_repr": "Посиделки",
+    "object_repr": "Posidelki",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
   }
@@ -1650,7 +1650,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "3",
-    "object_repr": "Наблюдения",
+    "object_repr": "Nablyudeniya",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
   }
@@ -1663,7 +1663,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "2",
-    "object_repr": "Здоровье",
+    "object_repr": "Zdorove",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"]}}]"
   }
@@ -1676,7 +1676,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "3",
-    "object_repr": "Наблюдения",
+    "object_repr": "Nablyudeniya",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
   }
@@ -1689,7 +1689,7 @@
     "user": 1,
     "content_type": 1,
     "object_id": "3",
-    "object_repr": "Наблюдения",
+    "object_repr": "Nablyudeniya",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
   }
@@ -1698,7 +1698,7 @@
   "model": "auth.permission",
   "pk": 1,
   "fields": {
-    "name": "Can add категория",
+    "name": "Can add category",
     "content_type": 1,
     "codename": "add_category"
   }
@@ -1707,7 +1707,7 @@
   "model": "auth.permission",
   "pk": 2,
   "fields": {
-    "name": "Can change категория",
+    "name": "Can change category",
     "content_type": 1,
     "codename": "change_category"
   }
@@ -1716,7 +1716,7 @@
   "model": "auth.permission",
   "pk": 3,
   "fields": {
-    "name": "Can delete категория",
+    "name": "Can delete category",
     "content_type": 1,
     "codename": "delete_category"
   }
@@ -1725,7 +1725,7 @@
   "model": "auth.permission",
   "pk": 4,
   "fields": {
-    "name": "Can view категория",
+    "name": "Can view category",
     "content_type": 1,
     "codename": "view_category"
   }
@@ -1734,7 +1734,7 @@
   "model": "auth.permission",
   "pk": 5,
   "fields": {
-    "name": "Can add местоположение",
+    "name": "Can add mestopolozhenie",
     "content_type": 2,
     "codename": "add_location"
   }
@@ -1743,7 +1743,7 @@
   "model": "auth.permission",
   "pk": 6,
   "fields": {
-    "name": "Can change местоположение",
+    "name": "Can change mestopolozhenie",
     "content_type": 2,
     "codename": "change_location"
   }
@@ -1752,7 +1752,7 @@
   "model": "auth.permission",
   "pk": 7,
   "fields": {
-    "name": "Can delete местоположение",
+    "name": "Can delete mestopolozhenie",
     "content_type": 2,
     "codename": "delete_location"
   }
@@ -1761,7 +1761,7 @@
   "model": "auth.permission",
   "pk": 8,
   "fields": {
-    "name": "Can view местоположение",
+    "name": "Can view mestopolozhenie",
     "content_type": 2,
     "codename": "view_location"
   }
@@ -1770,7 +1770,7 @@
   "model": "auth.permission",
   "pk": 9,
   "fields": {
-    "name": "Can add публикация",
+    "name": "Can add post",
     "content_type": 3,
     "codename": "add_post"
   }
@@ -1779,7 +1779,7 @@
   "model": "auth.permission",
   "pk": 10,
   "fields": {
-    "name": "Can change публикация",
+    "name": "Can change post",
     "content_type": 3,
     "codename": "change_post"
   }
@@ -1788,7 +1788,7 @@
   "model": "auth.permission",
   "pk": 11,
   "fields": {
-    "name": "Can delete публикация",
+    "name": "Can delete post",
     "content_type": 3,
     "codename": "delete_post"
   }
@@ -1797,7 +1797,7 @@
   "model": "auth.permission",
   "pk": 12,
   "fields": {
-    "name": "Can view публикация",
+    "name": "Can view post",
     "content_type": 3,
     "codename": "view_post"
   }
@@ -2044,8 +2044,8 @@
     "last_login": null,
     "is_superuser": false,
     "username": "leo",
-    "first_name": "Лев",
-    "last_name": "Толстой",
+    "first_name": "Lev",
+    "last_name": "Tolstoi",
     "email": "",
     "is_staff": false,
     "is_active": true,
@@ -2062,8 +2062,8 @@
     "last_login": null,
     "is_superuser": false,
     "username": "anton",
-    "first_name": "Антон",
-    "last_name": "Чехов",
+    "first_name": "Anton",
+    "last_name": "Chekhov",
     "email": "",
     "is_staff": false,
     "is_active": true,
@@ -2080,8 +2080,8 @@
     "last_login": null,
     "is_superuser": false,
     "username": "alex",
-    "first_name": "Александр",
-    "last_name": "Островский",
+    "first_name": "Aleksandr",
+    "last_name": "Ostrovskii",
     "email": "",
     "is_staff": false,
     "is_active": true,
@@ -2094,7 +2094,7 @@
   "model": "sessions.session",
   "pk": "533s8zgj27g7dlfdiszles0j366u5f7e",
   "fields": {
-    "session_data": ".eJxVjDsOwjAQBe_iGln-26Gkzxmi9e4aB1As5VMh7k4ipYD2zcx7iwG2tQ7bwvMwkrgKLS6_WwZ88nQAesB0bxLbtM5jlociT7rIvhG_bqf7d1BhqXvNiC6jAyA2vvjcJYyonS4hJMWsnCLLSAELlVi6rLzu0FpSJu26ieLzBRyyOMM:1p72ba:LAe-slAAK1-8xsaD-1zKhBO4iIlnZX7-u0PFzqwcoKY",
+    "session_date": ".eJxVjDsOwjAQBe_iGln-26Gkzxmi9e4aB1As5VMh7k4ipYD2zcx7iwG2tQ7bwvMwkrgKLS6_WwZ88nQAesB0bxLbtM5jlociT7rIvhG_bqf7d1BhqXvNiC6jAyA2vvjcJYyonS4hJMWsnCLLSAELlVi6rLzu0FpSJu26ieLzBRyyOMM:1p72ba:LAe-slAAK1-8xsaD-1zKhBO4iIlnZX7-u0PFzqwcoKY",
     "expire_date": "2023-01-01T22:58:02.843Z"
   }
 }

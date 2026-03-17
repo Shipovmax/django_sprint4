@@ -20,8 +20,8 @@ def test_csrf_failure_view():
     except Exception:
         pass
     assert csrf_failure_view, (
-        "Убедитесь, что в `settings.py` задана настройка `CSRF_FAILURE_VIEW` и"
-        " что она указывает на существующую view-функцию."
+        "Ensure that v `settings.py` zadana nastroika `CSRF_FAILURE_VIEW` i"
+        " chto ona ukazyvaet na sushchestvuyushchuyu view-funktsiyu."
     )
 
     request = HttpRequest()
@@ -32,14 +32,14 @@ def test_csrf_failure_view():
         response = csrf_failure_view(request)
     except Exception:
         raise AssertionError(
-            f"Убедитесь, что view-функция `{csrf_failure_view_setting}`"
-            " работает без ошибок."
+            f"Ensure that view-funktsiya `{csrf_failure_view_setting}`"
+            " rabotaet bez oshibok."
         )
     else:
         csrf_status = 403
         assert response.status_code == csrf_status, (
-            f"Убедитесь, что view-функция `{csrf_failure_view_setting}`"
-            f" возвращает статус {csrf_status}."
+            f"Ensure that view-funktsiya `{csrf_failure_view_setting}`"
+            f" vozvrashchaet status {csrf_status}."
         )
 
 
@@ -55,21 +55,21 @@ def test_custom_err_handlers(client, user_client):
             fpath = settings.TEMPLATES_DIR / "pages" / fname
         except Exception as e:
             raise AssertionError(
-                'Убедитесь, что переменная TEMPLATES_DIR в настройках проекта '
-                'является строкой (str) или объектом, соответствующим path-like интерфейсу '
-                '(например, экземпляром pathlib.Path). '
-                f'При операции конкатенации settings.TEMPLATES_DIR / "pages", возникла ошибка: {e}'
+                'Ensure that peremennaya TEMPLATES_DIR v project settings '
+                'is a string (str) or an object, sootvetstvuyushchim path-like interfeisu '
+                '(naprimer, ekzemplyarom pathlib.Path). '
+                f'While evaluating konkatenatsii settings.TEMPLATES_DIR / "pages", an error occurred: {e}'
             )
         assert os.path.isfile(
             fpath.resolve()
-        ), f"Убедитесь, что файл шаблона `{fpath}` существует."
+        ), f"Ensure that the template file `{fpath}` exists."
 
     try:
         from blogicum.urls import handler500
     except Exception:
         raise AssertionError(
-            "Убедитесь, что в головном файле с маршрутами нет ошибок и что в"
-            " нём задан обработчик ошибки 500."
+            "Ensure that v golovnom faile s marshrutami there are no errors i chto v"
+            " nem zadan obrabotchik errors 500."
         )
 
     def check_handler_exists(handler_path):
@@ -85,22 +85,22 @@ def test_custom_err_handlers(client, user_client):
         return True
 
     assert check_handler_exists(handler500), (
-        'Убедитесь, что обработчик ошибки 500 в головном файле с маршрутами '
-        'указывает на существующую функцию.'
+        'Ensure that obrabotchik errors 500 v golovnom faile s marshrutami '
+        'ukazyvaet na sushchestvuyushchuyu funktsiyu.'
     )
 
     try:
         from pages import views as pages_views
     except Exception:
         raise AssertionError(
-            "Убедитесь, что в файле `pages/views.py` нет ошибок."
+            "Ensure that in the file `pages/views.py` there are no errors."
         )
 
     for status, fname in err_pages_vs_file_names.items():
         assert fname in inspect.getsource(pages_views), (
-            "Проверьте view-функции приложения `pages`: убедитесь, что для"
-            " генерации страниц со статусом ответа `{status}` используется"
-            " шаблон `pages/{fname}`"
+            "Proverte view-funktsii applications `pages`: ubedites, chto dlya"
+            " generatsii stranits so statusom otveta `{status}` ispolzuetsya"
+            " shablon `pages/{fname}`"
         )
 
     # test template for 404
@@ -116,8 +116,8 @@ def test_custom_err_handlers(client, user_client):
         response,
         expected_template,
         (
-            f"Убедитесь, что для страниц со статусом ответа `{status}`"
-            f" используется шаблон `{expected_template}`"
+            f"Ensure that dlya stranits so statusom otveta `{status}`"
+            f" ispolzuetsya shablon `{expected_template}`"
         ),
     )
 

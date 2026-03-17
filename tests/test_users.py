@@ -28,12 +28,12 @@ def test_custom_err_handlers(client):
         from blogicum import urls as blogicum_urls
     except Exception:
         raise AssertionError(
-            "Убедитесь, в головном файле с маршрутами нет ошибок."
+            "Ensure that the main URL configuration file contains no errors."
         )
     urls_src_squashed = squash_code(inspect.getsource(blogicum_urls))
     if "django.contrib.auth.urls" not in urls_src_squashed:
         raise AssertionError(
-            "Убедитесь, что подключены маршруты для работы с пользователями из"
+            "Ensure that the routes for user authentication from"
             " `django.contrib.auth.urls`."
         )
 
@@ -60,7 +60,7 @@ def test_custom_err_handlers(client):
     registration_url = "auth/registration/"
     auth_registration_patterns = search_url_patterns(registration_url)
     assert auth_registration_patterns, (
-        "Убедитесь, что в головном файле с маршрутами переопределён маршрут"
+        "Ensure that the route is overridden in the main URL configuration file"
         f" `{registration_url}`."
     )
 
@@ -80,15 +80,15 @@ def test_custom_err_handlers(client):
             fpath: Path = Path(settings.TEMPLATES_DIR) / "registration" / template
         except Exception as e:
             raise AssertionError(
-                'Убедитесь, что переменная TEMPLATES_DIR в настройках проекта '
-                'является строкой (str) или объектом, соответствующим path-like интерфейсу '
-                '(например, экземпляром pathlib.Path). '
-                f'При операции Path(settings.TEMPLATES_DIR) / "registration", возникла ошибка: {e}'
+                'Ensure that peremennaya TEMPLATES_DIR v project settings '
+                'is a string (str) or an object, sootvetstvuyushchim path-like interfeisu '
+                '(naprimer, ekzemplyarom pathlib.Path). '
+                f'While evaluating Path(settings.TEMPLATES_DIR) / "registration", an error occurred: {e}'
             )
         frpath: Path = fpath.relative_to(settings.BASE_DIR)
         assert os.path.isfile(
             fpath.resolve()
-        ), f"Убедитесь, что файл шаблона `{frpath}` существует."
+        ), f"Ensure that the template file `{frpath}` exists."
 
 
 @pytest.mark.django_db
@@ -100,8 +100,8 @@ def test_profile(
 
     User = get_user_model()
     status_code_not_404_err_msg = (
-        "Убедитесь, что при обращении к странице несуществующего "
-        "пользователя возвращается статус 404."
+        "Ensure that pri obrashchenii k page nesushchestvuyushchego "
+        "user vozvrashchaetsya status 404."
     )
     try:
         response = user_client.get("/profile/this_is_unexisting_user_name/")
@@ -142,9 +142,9 @@ def test_profile(
         )
     except ManageProfileLinksException:
         raise AssertionError(
-            "Убедитесь, что на странице профиля пользователя ссылки для"
-            " редактирования профиля и изменения пароля видны только владельцу"
-            " профиля, но не другим пользователям."
+            "Ensure that on the profile user links dlya"
+            " edit the profile i changing the password vidny tolko vladeltsu"
+            " profile, no ne drugim userm."
         )
 
     unlogged_diff_urls = get_extra_urls(
@@ -152,8 +152,8 @@ def test_profile(
     )
 
     assert {edit_url, change_pwd_url}.issubset(set(unlogged_diff_urls)), (
-        "Убедитесь, что неаутентифицированному пользователю недоступны ссылки"
-        " для редактирования профиля и изменения пароля."
+        "Ensure that an unauthenticated user nedostupny links"
+        " dlya edit the profile i changing the password."
     )
 
     item_to_edit = user
@@ -180,13 +180,13 @@ def _test_user_info_displayed(
 ) -> None:
     if profile_user.first_name not in profile_user_content:
         raise AssertionError(
-            f"Убедитесь, что на странице `{printed_url}` отображается имя"
-            " пользователя."
+            f"Ensure that on the `{printed_url}` is displayed first name"
+            " user."
         )
     if profile_user.last_name not in profile_user_content:
         raise AssertionError(
-            f"Убедитесь, что на странице `{printed_url}` отображается фамилия"
-            " пользователя."
+            f"Ensure that on the `{printed_url}` is displayed last name"
+            " user."
         )
 
 
@@ -208,8 +208,8 @@ def try_get_profile_manage_urls(
         edit_url, change_pwd_url = change_pwd_url, edit_url
     if change_pwd_marker not in change_pwd_url:
         raise AssertionError(
-            "Убедитесь, что на странице профиля владельцу этого профиля"
-            f" доступна ссылка `{change_pwd_marker}` для изменения пароля."
+            "Ensure that on the profile the profile owner"
+            f" a link is available `{change_pwd_marker}` dlya changing the password."
         )
 
     return edit_url, change_pwd_url

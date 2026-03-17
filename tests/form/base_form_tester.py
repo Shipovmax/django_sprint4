@@ -486,7 +486,7 @@ class SubmitTester(ABC):
         redirect_to_page: Union[TitledUrlRepr, str],
         by_user: Optional[str] = None,
     ):
-        by_user = by_user or "пользователь"
+        by_user = by_user or "user"
         return partial(
             SubmitTester.test_response_cbk,
             assert_status_in=(HTTPStatus.OK,),
@@ -498,7 +498,7 @@ class SubmitTester(ABC):
     def get_test_response_ok_cbk(
         tester: BaseTester, by_user: Optional[str] = None
     ):
-        by_user = by_user or "авторизованным пользователем"
+        by_user = by_user or "an authorized user"
         return partial(
             SubmitTester.test_response_cbk,
             assert_status_in=(HTTPStatus.OK,),
@@ -531,7 +531,7 @@ class AuthorisedSubmitTester(SubmitTester):
     ):
         return SubmitTester.get_test_response_redirect_cbk(
             tester=tester,
-            by_user=by_user or "авторизованным пользователем",
+            by_user=by_user or "an authorized user",
             redirect_to_page=redirect_to_page,
         )
 
@@ -540,7 +540,7 @@ class AuthorisedSubmitTester(SubmitTester):
         tester: BaseTester, by_user: Optional[str] = None
     ):
         return SubmitTester.get_test_response_ok_cbk(
-            tester=tester, by_user=by_user or "авторизованным пользователем"
+            tester=tester, by_user=by_user or "an authorized user"
         )
 
 
@@ -561,7 +561,7 @@ class UnauthorizedSubmitTester(SubmitTester):
     ):
         return SubmitTester.get_test_response_redirect_cbk(
             tester=tester,
-            by_user=by_user or "неавторизованным пользователем",
+            by_user=by_user or "nean authorized user",
             redirect_to_page=redirect_to_page,
         )
 
@@ -583,6 +583,6 @@ class AnonymousSubmitTester(SubmitTester):
     ):
         return SubmitTester.get_test_response_redirect_cbk(
             tester=tester,
-            by_user=by_user or "неаутентифицированным пользователем",
-            redirect_to_page=redirect_to_page or "страницу аутентификации",
+            by_user=by_user or "neauthenticated userem",
+            redirect_to_page=redirect_to_page or "authentication page",
         )

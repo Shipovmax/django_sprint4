@@ -42,7 +42,7 @@ class PostModelAdapter(StudentModelAdapter):
             image = models.ImageField()
 
             field_description = {
-                "image": "служит для хранения изображения публикации",
+                "image": "sluzhit dlya khraneniya izobrazheniya post",
             }
 
         return _AdapterFields

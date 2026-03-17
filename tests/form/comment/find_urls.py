@@ -19,7 +19,7 @@ def find_edit_and_delete_urls(
     """Looks up two links in the post_page_response's content.
     The links must be found between two adjacent comments to the post.
     The link that leads to a page with a form in its template's context
-    is the one for editing the comment,
+    is the one for edit the comment,
     the other one, therefore, is for its deletion.
     !!! Make sure each comment text in unique on the page.
     """
@@ -33,8 +33,8 @@ def find_edit_and_delete_urls(
     )
     between_comments_match = pattern.search(post_page_content)
     assert between_comments_match, (
-        "Убедитесь, что комментарии к публикациям отсортированы по времени их"
-        " публикации, «от старых к новым»."
+        "Ensure that comments k postm otsortirovany po vremeni ikh"
+        " post, «ot starykh k novym»."
     )
     text_between_comments = between_comments_match.group(1)
     between_comments_start_lineix = post_page_content.count(
@@ -53,9 +53,9 @@ def find_edit_and_delete_urls(
     )
     if len(set(link.get("href") for link in comment_links)) != 2:
         raise AssertionError(
-            "Убедитесь, что на странице поста автору комментария доступны"
-            " ссылки для редактирования и удаления этого комментария. Ссылки"
-            " должны вести на разные страницы, адрес которых начинается с"
+            "Ensure that on the post author comment dostupny"
+            " links dlya edit i deletion etogo comment. Ssylki"
+            " dolzhny vesti na raznye page, adres kotorykh nachinaetsya s"
             f" {urls_start_with.key}"
         )
 
@@ -77,24 +77,24 @@ def find_edit_and_delete_urls(
             )
         except NoReverseMatch:
             raise AssertionError(
-                "Убедитесь, что в контекст шаблонов страниц удаления "
-                "и редактирования комментария "
-                "передаётся объект комментария."
+                "Ensure that v kontext shablonov stranits deletion "
+                "i edit comment "
+                "peredaetsya comment object."
             )
         except Exception:
             return False
 
     assert assert_comment_links_return_same_get_status(comment_links), (
-        "Страницы удаления и редактирования комментария должны иметь"
-        " идентичные права доступа. Убедитесь, что GET-запрос к этим страницам"
-        " возвращает один и тот же статус и не удаляет комментарий."
+        "Stranitsy deletion i edit comment dolzhny imet"
+        " identichnye prava dostupa. Ensure that GET-zapros k etim pagem"
+        " vozvrashchaet odin i tot zhe status i ne udalyaet comments."
     )
 
     # Make sure GET requests to urls in `comment_links`
     # do not delete the comment (comment & delete are GET-idempotent):
     assert assert_comment_links_return_same_get_status(comment_links), (
-        "Убедитесь, что GET-запрос к страницам удаления и редактирования"
-        " комментария не удаляет комментарий."
+        "Ensure that GET-zapros k pagem deletion i edit"
+        " comment ne udalyaet comments."
     )
 
     if get_page_context_form(user_client, comment_links[0].get("href")).key:
@@ -102,17 +102,17 @@ def find_edit_and_delete_urls(
         assert not get_page_context_form(
             user_client, comment_links[1].get("href")
         ).key, (
-            "Убедитесь, что в словарь контекста для страницы удаления"
-            " комментария не передаётся объект формы. "
+            "Ensure that v slovar kontexta dlya page deletion"
+            " comment ne peredaetsya obekt formy. "
         )
     elif get_page_context_form(user_client, comment_links[1].get("href")).key:
         edit_link, del_link = del_link, edit_link
     else:
         raise AssertionError(
-            "Убедитесь, что автору комментария видна ссылка на страницу"
-            " редактирования этого комментария. Проверьте, что в словарь"
-            " контекста для страницы редактирования комментария передаётся"
-            " объект формы. "
+            "Ensure that author comment vidna ssylka na stranitsu"
+            " edit etogo comment. Check that v slovar"
+            " kontexta dlya page edit comment peredaetsya"
+            " obekt formy. "
         )
 
     comment_url_display_names = get_url_display_names(

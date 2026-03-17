@@ -22,14 +22,14 @@ from conftest import (
 
 
 @pytest.fixture
-def posts_with_unpublished_category(mixer: Mixer, user: Model):
+def post_with_unpublished_category(mixer: Mixer, user: Model):
     return mixer.cycle(N_PER_FIXTURE).blend(
         "blog.Post", author=user, category__is_published=False
     )
 
 
 @pytest.fixture
-def future_posts(mixer: Mixer, user: Model):
+def future_post(mixer: Mixer, user: Model):
     date_later_now = (
         timezone.now() + timedelta(days=date)
         for date in range(1, 11)
@@ -40,7 +40,7 @@ def future_posts(mixer: Mixer, user: Model):
 
 
 @pytest.fixture
-def unpublished_posts_with_published_locations(
+def unpublished_post_with_published_locations(
     mixer: Mixer, user, published_locations, published_category
 ):
     return mixer.cycle(N_PER_FIXTURE).blend(
@@ -98,7 +98,7 @@ def post_with_published_location(
 
 
 @pytest.fixture
-def many_posts_with_published_locations(
+def many_post_with_published_locations(
     mixer: Mixer, user, published_locations, published_category
 ):
     return mixer.cycle(N_PER_PAGE * 2).blend(
@@ -120,8 +120,8 @@ def post_comment_context_form_item(
         response.context,
         BaseForm,
         (
-            "Убедитесь, что в словарь контекста для страницы поста передаётся"
-            " ровно одна форма для создания комментария."
+            "Ensure that v slovar kontexta dlya post page peredaetsya"
+            " rovno odna the comment create form."
         ),
     )
     return result
@@ -136,8 +136,8 @@ def create_post_context_form_item(
         response.context,
         BaseForm,
         (
-            "Убедитесь, что в словарь контекста для страницы создания поста"
-            " передаётся ровно одна форма."
+            "Ensure that v slovar kontexta dlya page create post"
+            " peredaetsya rovno odna forma."
         ),
     )
     return result

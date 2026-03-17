@@ -13,25 +13,25 @@ def test_gitignore():
             gitignore = fh.read()
     except Exception as e:
         raise AssertionError(
-            "При чтении файла `.gitignore` в корне проекта возникла ошибка:\n"
+            "Pri chtenii faila `.gitignore` v korne proekta an error occurred:\n"
             f"{type(e).__name__}: {e}"
         )
     assert "sent_emails/" in gitignore, (
-        "Убедитесь, что директория `sent_emails/`, служащая для хранения"
-        " e-mail сообщений, указана в файле `.gitignore` в корне проекта."
+        "Ensure that direktoriya `sent_emails/`, sluzhashchaya dlya khraneniya"
+        " e-mail soobshchenii, ukazana in the file `.gitignore` v korne proekta."
     )
 
 
 def test_email_backend_settings():
     assert hasattr(
         settings, "EMAIL_BACKEND"
-    ), "Убедитесь, что в проекте задана настройка `EMAIL_BACKEND`."
+    ), "Ensure that v proekte zadana nastroika `EMAIL_BACKEND`."
     assert EmailBackend.__module__ in settings.EMAIL_BACKEND, (
-        "Убедитесь, что файловый бэкенд для отправки e-mail подключен с"
-        " помощью настройки `EMAIL_BACKEND`."
+        "Ensure that failovyi bekend dlya otpravki e-mail podklyuchen s"
+        " pomoshchyu nastroiki `EMAIL_BACKEND`."
     )
     excpect_email_file = settings.BASE_DIR / "sent_emails"
     assert getattr(settings, "EMAIL_FILE_PATH", "") == excpect_email_file, (
-        "Убедитесь, что в настройке `EMAIL_FILE_PATH` указан путь `BASE_DIR /"
+        "Ensure that v nastroike `EMAIL_FILE_PATH` ukazan put `BASE_DIR /"
         " 'sent_emails'`."
     )
