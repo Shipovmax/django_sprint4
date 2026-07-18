@@ -147,5 +147,6 @@ dmypy.json
 
 # Static and media directories
 media/
+staticfiles/
 
 sent_emails/
