@@ -1,27 +1,24 @@
 from typing import Tuple, Union
 
 import bs4
-from django.db.models import QuerySet, Model
+from conftest import TitledUrlRepr
+from django.db.models import Model, QuerySet
 from django.forms import BaseForm
 from django.http import HttpResponse
-
-from conftest import TitledUrlRepr
 from fixtures.types import ModelAdapterT
 from form.base_form_tester import (
-    FormTagMissingException,
+    AuthenticatedEditException,
+    BaseFormTester,
+    DatabaseCreationException,
     FormMethodException,
+    FormTagMissingException,
+    FormValidationException,
+    ItemCreatedException,
+    SubmitTester,
     TextareaMismatchException,
     TextareaTagMissingException,
-)
-from form.base_form_tester import (
-    SubmitTester,
-    FormValidationException,
-    BaseFormTester,
-    UnauthorizedEditException,
     UnauthenticatedEditException,
-    AuthenticatedEditException,
-    DatabaseCreationException,
-    ItemCreatedException,
+    UnauthorizedEditException,
 )
 
 
@@ -34,9 +31,7 @@ class EditCommentFormTester(BaseFormTester):
         **kwargs,
     ):
         try:
-            super().__init__(
-                response, *args, ModelAdapter=ModelAdapter, **kwargs
-            )
+            super().__init__(response, *args, ModelAdapter=ModelAdapter, **kwargs)
         except FormTagMissingException as e:
             raise AssertionError(
                 "Ensure that the"
@@ -89,13 +84,10 @@ class EditCommentFormTester(BaseFormTester):
             return super().try_create_item(form, qs, submitter, assert_created)
         except FormValidationException as e:
             raise AssertionError(
-                "When edit comment voznikaet error:\n"
-                f"{type(e).__name__}: {e}"
+                "When edit comment voznikaet error:\n" f"{type(e).__name__}: {e}"
             ) from e
 
-    def test_unlogged_cannot_create(
-        self, form: BaseForm, qs: QuerySet
-    ) -> None:
+    def test_unlogged_cannot_create(self, form: BaseForm, qs: QuerySet) -> None:
         try:
             super().test_unlogged_cannot_create(form, qs)
         except ItemCreatedException as e:
@@ -134,9 +126,7 @@ class EditCommentFormTester(BaseFormTester):
     def redirect_error_message(
         self, by_user: str, redirect_to_page: Union[TitledUrlRepr, str]
     ) -> str:
-        redirect_to_page_repr = self.get_redirect_to_page_repr(
-            redirect_to_page
-        )
+        redirect_to_page_repr = self.get_redirect_to_page_repr(redirect_to_page)
         return (
             "Ensure that pri otpravke formy edit comment"
             f" {by_user} on is redirected to {redirect_to_page_repr}."
@@ -151,7 +141,7 @@ class EditCommentFormTester(BaseFormTester):
     @property
     def author_assignment_error_message(self) -> str:
         return (
-            "Ensure that pri redaktirovanii comment v field \"author\""
+            'Ensure that pri redaktirovanii comment v field "author"'
             " the authenticated user is provided."
         )
 

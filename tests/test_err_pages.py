@@ -55,9 +55,9 @@ def test_custom_err_handlers(client, user_client):
             fpath = settings.TEMPLATES_DIR / "pages" / fname
         except Exception as e:
             raise AssertionError(
-                'Ensure that peremennaya TEMPLATES_DIR v project settings '
-                'is a string (str) or an object, sootvetstvuyushchim path-like interfeisu '
-                '(naprimer, ekzemplyarom pathlib.Path). '
+                "Ensure that peremennaya TEMPLATES_DIR v project settings "
+                "is a string (str) or an object, sootvetstvuyushchim path-like interfeisu "
+                "(naprimer, ekzemplyarom pathlib.Path). "
                 f'While evaluating konkatenatsii settings.TEMPLATES_DIR / "pages", an error occurred: {e}'
             )
         assert os.path.isfile(
@@ -73,7 +73,7 @@ def test_custom_err_handlers(client, user_client):
         )
 
     def check_handler_exists(handler_path):
-        module_name, func_name = handler_path.rsplit('.', 1)
+        module_name, func_name = handler_path.rsplit(".", 1)
         try:
             module = importlib.import_module(module_name)
         except ImportError:
@@ -85,8 +85,8 @@ def test_custom_err_handlers(client, user_client):
         return True
 
     assert check_handler_exists(handler500), (
-        'Ensure that obrabotchik errors 500 v golovnom faile s marshrutami '
-        'ukazyvaet na sushchestvuyushchuyu funktsiyu.'
+        "Ensure that obrabotchik errors 500 v golovnom faile s marshrutami "
+        "ukazyvaet na sushchestvuyushchuyu funktsiyu."
     )
 
     try:

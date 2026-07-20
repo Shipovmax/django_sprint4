@@ -1,8 +1,7 @@
-from typing import List, Sequence, Dict, Optional
+from typing import Dict, List, Optional, Sequence
 
 from bs4 import BeautifulSoup
-from bs4.element import Tag, SoupStrainer
-
+from bs4.element import SoupStrainer, Tag
 from conftest import KeyVal
 
 
@@ -16,7 +15,7 @@ def find_links_between_lines(
     if not link_text_in:
         link_text_in = "\n".join(
             page_content.split("\n")[
-                (start_lineix if start_lineix >= 0 else 0): (
+                (start_lineix if start_lineix >= 0 else 0) : (
                     end_lineix if end_lineix >= 0 else None
                 )
             ]

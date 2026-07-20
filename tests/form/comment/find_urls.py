@@ -2,19 +2,18 @@ import re
 from typing import Sequence, Tuple
 
 import django.test
+from conftest import KeyVal, get_page_context_form
 from django.http import HttpResponse
 from django.urls import NoReverseMatch
-
 from fixtures.types import CommentModelAdapterT
 from form.find_urls import find_links_between_lines, get_url_display_names
-from conftest import KeyVal, get_page_context_form
 
 
 def find_edit_and_delete_urls(
-        adapted_comments: Sequence[CommentModelAdapterT],
-        post_page_response: HttpResponse,
-        urls_start_with: KeyVal,
-        user_client: django.test.Client,
+    adapted_comments: Sequence[CommentModelAdapterT],
+    post_page_response: HttpResponse,
+    urls_start_with: KeyVal,
+    user_client: django.test.Client,
 ) -> Tuple[KeyVal, KeyVal]:
     """Looks up two links in the post_page_response's content.
     The links must be found between two adjacent comments to the post.
@@ -72,8 +71,7 @@ def find_edit_and_delete_urls(
                     user_client.get(comment_link.get("href")).status_code
                 )
             return all(
-                x == get_request_status_codes[0]
-                for x in get_request_status_codes
+                x == get_request_status_codes[0] for x in get_request_status_codes
             )
         except NoReverseMatch:
             raise AssertionError(

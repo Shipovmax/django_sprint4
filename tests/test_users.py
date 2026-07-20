@@ -2,24 +2,22 @@ import inspect
 import os
 from http import HTTPStatus
 from pathlib import Path
-from typing import Tuple, Set, Optional
+from typing import Optional, Set, Tuple
 
 import pytest
+from adapters.user import UserModelAdapter
+from conftest import KeyVal, squash_code
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.db.models import Model
 from django.http import HttpResponse
 from django.urls import URLPattern, URLResolver, get_resolver
-
-from adapters.user import UserModelAdapter
-from conftest import KeyVal, squash_code
 from form.find_urls import find_links_between_lines
 from form.user.edit_form_tester import EditUserFormTester
 from test_edit import _test_edit
 
 
-class ManageProfileLinksException(Exception):
-    ...
+class ManageProfileLinksException(Exception): ...
 
 
 @pytest.mark.django_db
@@ -48,9 +46,7 @@ def test_custom_err_handlers(client):
                     if substring in pattern_as_str:
                         results.append(pattern)
                 elif isinstance(pattern, URLResolver):
-                    search_patterns(
-                        head + str(pattern.pattern), pattern.url_patterns
-                    )
+                    search_patterns(head + str(pattern.pattern), pattern.url_patterns)
             return results
 
         search_patterns(head="", patterns=resolver.url_patterns)
@@ -80,9 +76,9 @@ def test_custom_err_handlers(client):
             fpath: Path = Path(settings.TEMPLATES_DIR) / "registration" / template
         except Exception as e:
             raise AssertionError(
-                'Ensure that peremennaya TEMPLATES_DIR v project settings '
-                'is a string (str) or an object, sootvetstvuyushchim path-like interfeisu '
-                '(naprimer, ekzemplyarom pathlib.Path). '
+                "Ensure that peremennaya TEMPLATES_DIR v project settings "
+                "is a string (str) or an object, sootvetstvuyushchim path-like interfeisu "
+                "(naprimer, ekzemplyarom pathlib.Path). "
                 f'While evaluating Path(settings.TEMPLATES_DIR) / "registration", an error occurred: {e}'
             )
         frpath: Path = fpath.relative_to(settings.BASE_DIR)
@@ -92,9 +88,7 @@ def test_custom_err_handlers(client):
 
 
 @pytest.mark.django_db
-def test_profile(
-        user, another_user, user_client, another_user_client, unlogged_client
-):
+def test_profile(user, another_user, user_client, another_user_client, unlogged_client):
     user_url = f"/profile/{user.username}/"
     printed_url = "/profile/<username>/"
 
@@ -108,33 +102,24 @@ def test_profile(
     except User.DoesNotExist:
         raise AssertionError(status_code_not_404_err_msg)
 
-    assert response.status_code == HTTPStatus.NOT_FOUND, (
-        status_code_not_404_err_msg)
+    assert response.status_code == HTTPStatus.NOT_FOUND, status_code_not_404_err_msg
 
     user_response: HttpResponse = user_client.get(user_url)
 
     user_content = user_response.content.decode("utf-8")
 
-    anothers_same_page_response: HttpResponse = another_user_client.get(
-        user_url
-    )
-    anothers_same_page_content = anothers_same_page_response.content.decode(
-        "utf-8"
-    )
+    anothers_same_page_response: HttpResponse = another_user_client.get(user_url)
+    anothers_same_page_content = anothers_same_page_response.content.decode("utf-8")
 
     unlogged_same_page_response: HttpResponse = unlogged_client.get(user_url)
-    unlogged_same_page_content = unlogged_same_page_response.content.decode(
-        "utf-8"
-    )
+    unlogged_same_page_content = unlogged_same_page_response.content.decode("utf-8")
 
     for profile_user, profile_user_content in (
-            (user, user_content),
-            (user, unlogged_same_page_content),
-            (user, anothers_same_page_content),
+        (user, user_content),
+        (user, unlogged_same_page_content),
+        (user, anothers_same_page_content),
     ):
-        _test_user_info_displayed(
-            profile_user, profile_user_content, printed_url
-        )
+        _test_user_info_displayed(profile_user, profile_user_content, printed_url)
 
     try:
         edit_url, change_pwd_url = try_get_profile_manage_urls(
@@ -176,22 +161,20 @@ def test_profile(
 
 
 def _test_user_info_displayed(
-        profile_user: Model, profile_user_content: str, printed_url: str
+    profile_user: Model, profile_user_content: str, printed_url: str
 ) -> None:
     if profile_user.first_name not in profile_user_content:
         raise AssertionError(
-            f"Ensure that on the `{printed_url}` is displayed first name"
-            " user."
+            f"Ensure that on the `{printed_url}` is displayed first name" " user."
         )
     if profile_user.last_name not in profile_user_content:
         raise AssertionError(
-            f"Ensure that on the `{printed_url}` is displayed last name"
-            " user."
+            f"Ensure that on the `{printed_url}` is displayed last name" " user."
         )
 
 
 def try_get_profile_manage_urls(
-        user_content: str, anothers_page_content: str, ignore_urls: Set[str]
+    user_content: str, anothers_page_content: str, ignore_urls: Set[str]
 ) -> Tuple[str, str]:
     diff_urls = get_extra_urls(
         base_content=anothers_page_content,
@@ -216,17 +199,13 @@ def try_get_profile_manage_urls(
 
 
 def get_extra_urls(
-        base_content: str,
-        extra_content: str,
-        ignore_urls: Optional[Set[str]] = None,
+    base_content: str,
+    extra_content: str,
+    ignore_urls: Optional[Set[str]] = None,
 ):
     ignore_urls = ignore_urls or set()
-    find_links_kwargs = dict(
-        urls_start_with="", start_lineix=-1, end_lineix=-1
-    )
-    user_links = set(
-        find_links_between_lines(extra_content, **find_links_kwargs)
-    )
+    find_links_kwargs = dict(urls_start_with="", start_lineix=-1, end_lineix=-1)
+    user_links = set(find_links_between_lines(extra_content, **find_links_kwargs))
     anothers_page_links = set(
         find_links_between_lines(base_content, **find_links_kwargs)
     )

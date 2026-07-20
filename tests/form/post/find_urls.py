@@ -1,12 +1,11 @@
 import re
 from typing import Tuple
 
-from django.http import HttpResponse
-
 from adapters.post import PostModelAdapter
+from conftest import KeyVal
+from django.http import HttpResponse
 from fixtures.types import CommentModelAdapterT
 from form.find_urls import find_links_between_lines, get_url_display_names
-from conftest import KeyVal
 
 
 def find_edit_and_delete_urls(
@@ -35,9 +34,7 @@ def find_edit_and_delete_urls(
     # Get info about html between two consecutive post
     displayed_post_text = post_adapter.displayed_field_name_or_value
     displayed_comment_text = comment_adapter.displayed_field_name_or_value
-    pattern = re.compile(
-        rf"{displayed_post_text}([\w\W]*?){displayed_comment_text}"
-    )
+    pattern = re.compile(rf"{displayed_post_text}([\w\W]*?){displayed_comment_text}")
     between_post_match = pattern.search(post_page_content)
     assert between_post_match, links_not_found_err_msg
     text_between_post = between_post_match.group(1)
@@ -70,8 +67,7 @@ def find_edit_and_delete_urls(
         edit_link, del_link = del_link, edit_link
     else:
         raise AssertionError(
-            "Ensure that adres page edit post"
-            " -`post/<post_id>/edit/`."
+            "Ensure that adres page edit post" " -`post/<post_id>/edit/`."
         )
 
     post_url_display_names = get_url_display_names(

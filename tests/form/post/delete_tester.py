@@ -15,10 +15,7 @@ class DeletePostTester(DeleteTester):
 
     @property
     def anonymous_user_error(self):
-        return (
-            "Ensure that post ne mozhet byt udalen neauthenticated"
-            " userem."
-        )
+        return "Ensure that post ne mozhet byt udalen neauthenticated" " userem."
 
     @property
     def successful_delete_error(self):

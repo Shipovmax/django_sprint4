@@ -1,23 +1,22 @@
 import inspect
-from abc import abstractmethod, ABC
-from typing import Type, Optional, Callable, List, Tuple, Union
+from abc import ABC, abstractmethod
+from typing import Callable, List, Optional, Tuple, Type, Union
 
 import pytest
-from bs4 import BeautifulSoup
-from bs4.element import SoupStrainer
-from django.db.models import Model
-from django.http import HttpResponse
-from django.test.client import Client
-from mixer.main import Mixer
-
 from adapters.model_adapter import ModelAdapter
 from adapters.post import PostModelAdapter
+from bs4 import BeautifulSoup
+from bs4.element import SoupStrainer
 from conftest import (
     N_PER_PAGE,
     UrlRepr,
     _testget_context_item_by_class,
     _testget_context_item_by_key,
 )
+from django.db.models import Model
+from django.http import HttpResponse
+from django.test.client import Client
+from mixer.main import Mixer
 
 pytestmark = [pytest.mark.django_db]
 
@@ -52,8 +51,7 @@ class ContentTester(ABC):
     @abstractmethod
     def items_hardcoded_key(self):
         raise NotImplementedError(
-            "Override `items_hardcoded_key` property "
-            "in ContentTester`s child class"
+            "Override `items_hardcoded_key` property " "in ContentTester`s child class"
         )
 
     @abstractmethod
@@ -64,21 +62,15 @@ class ContentTester(ABC):
         self,
         url: Optional[str] = None,
         assert_status_in: Tuple[int] = (200,),
-        assert_cbk: Union[
-            Callable[[], None], str
-        ] = "raise_assert_page_loads_cbk",
+        assert_cbk: Union[Callable[[], None], str] = "raise_assert_page_loads_cbk",
     ) -> HttpResponse:
-        return self._testget(
-            self.user_client, url, assert_status_in, assert_cbk
-        )
+        return self._testget(self.user_client, url, assert_status_in, assert_cbk)
 
     def another_client_testget(
         self,
         url: Optional[str] = None,
         assert_status_in: Tuple[int] = (200,),
-        assert_cbk: Union[
-            Callable[[], None], str
-        ] = "raise_assert_page_loads_cbk",
+        assert_cbk: Union[Callable[[], None], str] = "raise_assert_page_loads_cbk",
     ) -> HttpResponse:
         return self._testget(
             self.another_user_client, url, assert_status_in, assert_cbk
@@ -89,9 +81,7 @@ class ContentTester(ABC):
         client,
         url: Optional[str] = None,
         assert_status_in: Tuple[int] = (200,),
-        assert_cbk: Union[
-            Callable[[], None], str
-        ] = "raise_assert_page_loads_cbk",
+        assert_cbk: Union[Callable[[], None], str] = "raise_assert_page_loads_cbk",
     ) -> HttpResponse:
         url = url or self.page_url.url
         try:
@@ -122,12 +112,8 @@ class ContentTester(ABC):
             return self._items_key
 
         def setup_for_url(setup_items: List[Model]) -> UrlRepr:
-            temp_category = self._mixer.blend(
-                "blog.Category", is_published=True
-            )
-            temp_location = self._mixer.blend(
-                "blog.Location", is_published=True
-            )
+            temp_category = self._mixer.blend("blog.Category", is_published=True)
+            temp_location = self._mixer.blend("blog.Location", is_published=True)
             temp_post = self._mixer.blend(
                 "blog.Post",
                 is_published=True,
@@ -199,16 +185,11 @@ class ProfilePostContentTester(PostContentTester):
         )
 
     def raise_assert_page_loads_cbk(self):
-        raise AssertionError(
-            "Ensure that user page loads without errors."
-        )
+        raise AssertionError("Ensure that user page loads without errors.")
 
     @property
     def image_display_error(self) -> str:
-        return (
-            "Ensure that on the profile authora are displayed"
-            " izobrazheniya post."
-        )
+        return "Ensure that on the profile authora are displayed" " izobrazheniya post."
 
 
 class MainPostContentTester(PostContentTester):
@@ -225,15 +206,12 @@ class MainPostContentTester(PostContentTester):
         )
 
     def raise_assert_page_loads_cbk(self):
-        raise AssertionError(
-            "Ensure that glavnaya page loads without errors."
-        )
+        raise AssertionError("Ensure that glavnaya page loads without errors.")
 
     @property
     def image_display_error(self) -> str:
         return (
-            "Ensure that on the home page vidny prikreplennye k postm"
-            " izobrazheniya."
+            "Ensure that on the home page vidny prikreplennye k postm" " izobrazheniya."
         )
 
 
@@ -263,15 +241,12 @@ class CategoryPostContentTester(PostContentTester):
         )
 
     def raise_assert_page_loads_cbk(self):
-        raise AssertionError(
-            "Ensure that page category loads without errors."
-        )
+        raise AssertionError("Ensure that page category loads without errors.")
 
     @property
     def image_display_error(self) -> str:
         return (
-            "Ensure that on the category vidny prikreplennye k postm"
-            " izobrazheniya."
+            "Ensure that on the category vidny prikreplennye k postm" " izobrazheniya."
         )
 
 
@@ -319,9 +294,7 @@ def category_content_tester(
     another_user_client: Client,
     unlogged_client: Client,
 ) -> CategoryPostContentTester:
-    return CategoryPostContentTester(
-        mixer, PostModel, PostModelAdapter, user_client
-    )
+    return CategoryPostContentTester(mixer, PostModel, PostModelAdapter, user_client)
 
 
 class TestContent:
@@ -338,15 +311,12 @@ class TestContent:
 
     def test_unpublished(self, unpublished_post_with_published_locations):
         profile_response = self.profile_tester.user_client_testget()
-        context_post = profile_response.context.get(
-            self.profile_tester.items_key
-        )
+        context_post = profile_response.context.get(self.profile_tester.items_key)
         expected_n = self.profile_tester.n_or_page_size(
             len(unpublished_post_with_published_locations)
         )
         assert len(context_post) == expected_n, (
-            "Ensure that on the user author mozhet videt svoi"
-            " posty, snyatye s post."
+            "Ensure that on the user author mozhet videt svoi" " posty, snyatye s post."
         )
 
         response = self.main_tester.user_client_testget()
@@ -369,13 +339,11 @@ class TestContent:
         else:
             context_post = response.context.get(items_key)
             assert len(context_post) == 0, (
-                "Ensure that on the category ne are displayed posty, "
-                "snyatye s post."
+                "Ensure that on the category ne are displayed posty, " "snyatye s post."
             )
 
     def test_only_own_pubs_in_category(
-        self, user_client, post_with_published_location,
-            post_with_another_category
+        self, user_client, post_with_published_location, post_with_another_category
     ):
         response = self.category_tester.user_client_testget()
         try:
@@ -384,14 +352,12 @@ class TestContent:
             pass
         else:
             context_post = response.context.get(items_key)
-            assert (
-                len(context_post) == 1
-            ), ("Ensure that on the category "
-                "ne are displayed post drugikh category.")
+            assert len(context_post) == 1, (
+                "Ensure that on the category " "ne are displayed post drugikh category."
+            )
 
     def test_only_own_pubs_in_profile(
-            self, user_client, post_with_published_location,
-            post_of_another_author
+        self, user_client, post_with_published_location, post_of_another_author
     ):
         response = self.profile_tester.user_client_testget()
         try:
@@ -400,18 +366,13 @@ class TestContent:
             pass
         else:
             context_post = response.context.get(items_key)
-            assert (
-                    len(context_post) == 1
-            ), ("Ensure that on the user "
-                "ne are displayed post drugikh authorov.")
+            assert len(context_post) == 1, (
+                "Ensure that on the user " "ne are displayed post drugikh authorov."
+            )
 
-    def test_unpublished_category(
-        self, user_client, post_with_unpublished_category
-    ):
+    def test_unpublished_category(self, user_client, post_with_unpublished_category):
         profile_response = self.profile_tester.user_client_testget()
-        context_post = profile_response.context.get(
-            self.profile_tester.items_key
-        )
+        context_post = profile_response.context.get(self.profile_tester.items_key)
         expected_n = self.profile_tester.n_or_page_size(
             len(post_with_unpublished_category)
         )
@@ -429,8 +390,7 @@ class TestContent:
 
         def raise_assert_not_exist_cbk():
             raise AssertionError(
-                "Ensure that page category nedostupna, esli category"
-                " snyata s post."
+                "Ensure that page category nedostupna, esli category" " snyata s post."
             )
 
         self.category_tester.user_client_testget(
@@ -439,13 +399,10 @@ class TestContent:
 
     def test_future_post(self, user_client, future_post):
         profile_response = self.profile_tester.user_client_testget()
-        context_post = profile_response.context.get(
-            self.profile_tester.items_key
-        )
+        context_post = profile_response.context.get(self.profile_tester.items_key)
         expected_n = self.profile_tester.n_or_page_size(len(future_post))
         assert len(context_post) == expected_n, (
-            "Ensure that on the user author mozhet videt svoi"
-            " otlozhennye post."
+            "Ensure that on the user author mozhet videt svoi" " otlozhennye post."
         )
 
         response = self.main_tester.user_client_testget()
@@ -455,10 +412,9 @@ class TestContent:
             pass
         else:
             context_post = response.context.get(items_key)
-            assert (
-                len(context_post) == 0
-            ), ("Ensure that on the home page "
-                "ne are displayed otlozhennye post.")
+            assert len(context_post) == 0, (
+                "Ensure that on the home page " "ne are displayed otlozhennye post."
+            )
 
         response = self.category_tester.user_client_testget()
         try:
@@ -467,14 +423,11 @@ class TestContent:
             pass
         else:
             context_post = response.context.get(items_key)
-            assert (
-                len(context_post) == 0
-            ), ("Ensure that on the category "
-                "ne are displayed otlozhennye post.")
+            assert len(context_post) == 0, (
+                "Ensure that on the category " "ne are displayed otlozhennye post."
+            )
 
-    def test_pagination(
-        self, user_client, many_post_with_published_locations
-    ):
+    def test_pagination(self, user_client, many_post_with_published_locations):
         post = many_post_with_published_locations
 
         assert len(post) > self.profile_tester.n_per_page
@@ -495,10 +448,7 @@ class TestContent:
                     " profile authora otsortirovannymi po vremeni ikh"
                     " post, «ot novykh k starym»."
                 ),
-                (
-                    "Ensure that on the profile authora rabotaet"
-                    " paginatsiya."
-                ),
+                ("Ensure that on the profile authora rabotaet" " paginatsiya."),
             ),
             (
                 self.profile_tester,

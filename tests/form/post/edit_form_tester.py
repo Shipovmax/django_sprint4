@@ -1,30 +1,25 @@
 from typing import Tuple, Union
 
 import bs4
-from django.db.models import QuerySet, Model
+from conftest import TitledUrlRepr, UrlRepr
+from django.db.models import Model, QuerySet
 from django.forms import BaseForm
 from django.http import HttpResponse
-
-from conftest import TitledUrlRepr, UrlRepr
 from fixtures.types import ModelAdapterT
 from form.base_form_tester import (
-    FormTagMissingException,
-    FormMethodException,
-    TextareaMismatchException,
-    TextareaTagMissingException,
-)
-from form.base_form_tester import (
-    SubmitTester,
-    FormValidationException,
-    UnauthorizedEditException,
-    UnauthenticatedEditException,
+    AnonymousSubmitTester,
     AuthenticatedEditException,
     DatabaseCreationException,
+    FormMethodException,
+    FormTagMissingException,
+    FormValidationException,
     ItemCreatedException,
-)
-from form.base_form_tester import (
+    SubmitTester,
+    TextareaMismatchException,
+    TextareaTagMissingException,
+    UnauthenticatedEditException,
+    UnauthorizedEditException,
     UnauthorizedSubmitTester,
-    AnonymousSubmitTester,
 )
 from form.post.form_tester import PostFormTester
 
@@ -38,13 +33,10 @@ class EditPostFormTester(PostFormTester):
         **kwargs,
     ):
         try:
-            super().__init__(
-                response, *args, ModelAdapter=ModelAdapter, **kwargs
-            )
+            super().__init__(response, *args, ModelAdapter=ModelAdapter, **kwargs)
         except FormTagMissingException as e:
             raise AssertionError(
-                "Ensure that the edit post peredaetsya"
-                " forma."
+                "Ensure that the edit post peredaetsya" " forma."
             ) from e
 
     @property
@@ -69,8 +61,7 @@ class EditPostFormTester(PostFormTester):
             return super().textarea_tag
         except TextareaTagMissingException as e:
             raise AssertionError(
-                "Ensure that v post edit form est element"
-                " `textarea`."
+                "Ensure that v post edit form est element" " `textarea`."
             ) from e
 
     def _validate(self):
@@ -78,13 +69,11 @@ class EditPostFormTester(PostFormTester):
             super()._validate()
         except FormTagMissingException as e:
             raise AssertionError(
-                "Ensure that the edit post peredaetsya"
-                " forma."
+                "Ensure that the edit post peredaetsya" " forma."
             ) from e
         except FormMethodException as e:
             raise AssertionError(
-                "Ensure that forma dlya edit post otpravlyaetsya"
-                " metodom `POST`."
+                "Ensure that forma dlya edit post otpravlyaetsya" " metodom `POST`."
             ) from e
         except TextareaMismatchException as e:
             raise AssertionError(
@@ -103,13 +92,10 @@ class EditPostFormTester(PostFormTester):
             return super().try_create_item(form, qs, submitter, assert_created)
         except FormValidationException as e:
             raise AssertionError(
-                "When edit post voznikaet error:\n"
-                f"{type(e).__name__}: {e}"
+                "When edit post voznikaet error:\n" f"{type(e).__name__}: {e}"
             ) from e
 
-    def test_unlogged_cannot_create(
-        self, form: BaseForm, qs: QuerySet
-    ) -> None:
+    def test_unlogged_cannot_create(self, form: BaseForm, qs: QuerySet) -> None:
         try:
             super().test_unlogged_cannot_create(form, qs)
         except ItemCreatedException as e:
@@ -126,18 +112,14 @@ class EditPostFormTester(PostFormTester):
             return super().test_edit_item(updated_form, qs, item_adapter)
         except UnauthorizedEditException:
             raise AssertionError(
-                "Ensure that user ne mozhet redaktirovat chuzhie"
-                " posty."
+                "Ensure that user ne mozhet redaktirovat chuzhie" " posty."
             )
         except UnauthenticatedEditException:
             raise AssertionError(
-                "Ensure that an unauthenticated user ne mozhet"
-                " redaktirovat posty."
+                "Ensure that an unauthenticated user ne mozhet" " redaktirovat posty."
             )
         except AuthenticatedEditException:
-            raise AssertionError(
-                "Ensure that user mozhet redaktirovat svoi posty."
-            )
+            raise AssertionError("Ensure that user mozhet redaktirovat svoi posty.")
         except DatabaseCreationException:
             raise AssertionError(
                 "Ensure that pri redaktirovanii post v database ne"
@@ -147,9 +129,7 @@ class EditPostFormTester(PostFormTester):
     def redirect_error_message(
         self, by_user: str, redirect_to_page: Union[TitledUrlRepr, str]
     ) -> str:
-        redirect_to_page_repr = self.get_redirect_to_page_repr(
-            redirect_to_page
-        )
+        redirect_to_page_repr = self.get_redirect_to_page_repr(redirect_to_page)
         return (
             "Ensure that pri otpravke formy edit post"
             f" {by_user} on is redirected to {redirect_to_page_repr}."
@@ -171,8 +151,7 @@ class EditPostFormTester(PostFormTester):
     @property
     def display_text_error_message(self) -> str:
         return (
-            "Ensure that posle edit post novyi text"
-            " is displayed on the post page."
+            "Ensure that posle edit post novyi text" " is displayed on the post page."
         )
 
     def validation_error_message(self, student_form_fields_str: str) -> str:

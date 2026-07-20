@@ -3,26 +3,29 @@ import random
 import re
 from contextlib import contextmanager
 from http import HTTPStatus
-from typing import Tuple, Type, List
+from typing import List, Tuple, Type
 
 import django.test.client
 import pytest
 import pytz
-from django.db.models import Model, ImageField, DateTimeField
-from django.forms import BaseForm
-from django.http import HttpResponse
-from django.utils import timezone
-
 from adapters.post import PostModelAdapter
 from blog.models import Post
 from conftest import (
-    _TestModelAttrs,
     KeyVal,
-    get_create_a_post_get_response_safely, get_get_response_safely,
+    _TestModelAttrs,
+    get_create_a_post_get_response_safely,
+    get_get_response_safely,
 )
+from django.db.models import DateTimeField, ImageField, Model
+from django.forms import BaseForm
+from django.http import HttpResponse
+from django.utils import timezone
 from fixtures.types import CommentModelAdapterT, ModelAdapterT
 from form.base_form_tester import (
-    FormValidationException, AuthorisedSubmitTester, SubmitTester)
+    AuthorisedSubmitTester,
+    FormValidationException,
+    SubmitTester,
+)
 from form.post.create_form_tester import CreatePostFormTester
 from form.post.delete_tester import DeletePostTester
 from form.post.edit_form_tester import EditPostFormTester
@@ -33,19 +36,33 @@ from test_edit import _test_edit
 
 
 @pytest.mark.parametrize(
-    ("field", "type", "params", "field_error", "type_error",
-     "param_error", "value_error"),
+    (
+        "field",
+        "type",
+        "params",
+        "field_error",
+        "type_error",
+        "param_error",
+        "value_error",
+    ),
     [
         ("image", ImageField, {}, None, None, None, None),
-        ("pub_date", DateTimeField, {
-            'auto_now_add': False
-        }, None, None, None, (
-                 "Check that v models Post for attribute pub_date parametr "
-                 "`auto_now_add` ne ustanovlen ili imeet znachenie `False`. "
-                 "V inom sluchae stanet nevozmozhno publikovat posty "
-                 "zadnim chislom i otlozhennye posty.")),
+        (
+            "pub_date",
+            DateTimeField,
+            {"auto_now_add": False},
+            None,
+            None,
+            None,
+            (
+                "Check that v models Post for attribute pub_date parametr "
+                "`auto_now_add` ne ustanovlen ili imeet znachenie `False`. "
+                "V inom sluchae stanet nevozmozhno publikovat posty "
+                "zadnim chislom i otlozhennye posty."
+            ),
+        ),
     ],
-    ids=["`image` field", "`pub_date` field"]
+    ids=["`image` field", "`pub_date` field"],
 )
 class TestPostModelAttrs(_TestModelAttrs):
     @pytest.fixture(autouse=True)
@@ -64,29 +81,26 @@ def test_post_created_at(post_with_published_location):
     assert abs(
         post_with_published_location.created_at.replace(tzinfo=None) - now_utc
     ) < datetime.timedelta(seconds=1), (
-        "Ensure that pri sozdanii post emu prisvaivayutsya tekushchie date i"
-        " vremya."
+        "Ensure that pri sozdanii post emu prisvaivayutsya tekushchie date i" " vremya."
     )
 
 
 @pytest.mark.django_db(transaction=True)
 def test_post(
-        published_category: Model,
-        published_location: Model,
-        user_client: django.test.Client,
-        another_user_client: django.test.Client,
-        unlogged_client: django.test.Client,
-        comment_to_a_post: Model,
-        create_post_context_form_item: Tuple[str, BaseForm],
-        PostModel: Type[Model],
-        CommentModelAdapter: CommentModelAdapterT,
-        main_content_tester: MainPostContentTester
+    published_category: Model,
+    published_location: Model,
+    user_client: django.test.Client,
+    another_user_client: django.test.Client,
+    unlogged_client: django.test.Client,
+    comment_to_a_post: Model,
+    create_post_context_form_item: Tuple[str, BaseForm],
+    PostModel: Type[Model],
+    CommentModelAdapter: CommentModelAdapterT,
+    main_content_tester: MainPostContentTester,
 ):
     _, ctx_form = create_post_context_form_item
 
-    create_a_post_get_response = get_create_a_post_get_response_safely(
-        user_client
-    )
+    create_a_post_get_response = get_create_a_post_get_response_safely(user_client)
 
     response_on_created, created_items = _test_create_items(
         PostModel,
@@ -101,12 +115,12 @@ def test_post(
     )
 
     # checking images are visible on post create
-    created_content = response_on_created.content.decode('utf-8')
-    img_count = created_content.count('<img')
+    created_content = response_on_created.content.decode("utf-8")
+    img_count = created_content.count("<img")
     expected_img_count = main_content_tester.n_or_page_size(len(created_items))
-    assert img_count >= expected_img_count, (
-        'Ensure that pri sozdanii post ona is displayed s kartinkoi.'
-    )
+    assert (
+        img_count >= expected_img_count
+    ), "Ensure that pri sozdanii post ona is displayed s kartinkoi."
 
     edit_response, edit_url, del_url = _test_edit_post(
         CommentModelAdapter,
@@ -152,8 +166,9 @@ def test_post(
     )
     try:
         response = user_client.get(f"/posts/{item_to_delete_adapter.id}/")
-        assert response.status_code == HTTPStatus.NOT_FOUND, (
-            err_msg_unexisting_status_404)
+        assert (
+            response.status_code == HTTPStatus.NOT_FOUND
+        ), err_msg_unexisting_status_404
     except Post.DoesNotExist:
         raise AssertionError(err_msg_unexisting_status_404)
 
@@ -166,8 +181,9 @@ def test_post(
     except Post.DoesNotExist:
         raise AssertionError(edit_status_code_not_404_err_msg)
 
-    assert response.status_code == HTTPStatus.NOT_FOUND, (
-        edit_status_code_not_404_err_msg)
+    assert (
+        response.status_code == HTTPStatus.NOT_FOUND
+    ), edit_status_code_not_404_err_msg
 
     @contextmanager
     def set_post_unpublished(post_adapter):
@@ -198,8 +214,8 @@ def test_post(
         current_date = timezone.now()
         try:
             post_adapter.pub_date = post_adapter.pub_date.replace(
-                year=current_date.year + 1,
-                day=current_date.day - 1 or current_date.day)
+                year=current_date.year + 1, day=current_date.day - 1 or current_date.day
+            )
             post_adapter.save()
             yield
         finally:
@@ -208,8 +224,9 @@ def test_post(
 
     def check_post_access(client, post_adapter, err_msg, expected_status):
         url = f"/posts/{post_adapter.id}/"
-        get_get_response_safely(client, url=url, err_msg=err_msg,
-                                expected_status=expected_status)
+        get_get_response_safely(
+            client, url=url, err_msg=err_msg, expected_status=expected_status
+        )
 
     # Checking unpublished post
 
@@ -217,52 +234,61 @@ def test_post(
 
     with set_post_unpublished(detail_post_adapter):
         check_post_access(
-            user_client, detail_post_adapter,
-            "Ensure that post page, snyatogo s post, "
-            "dostupna author etogo post.",
-            expected_status=HTTPStatus.OK)
+            user_client,
+            detail_post_adapter,
+            "Ensure that post page, snyatogo s post, " "dostupna author etogo post.",
+            expected_status=HTTPStatus.OK,
+        )
         check_post_access(
-            another_user_client, detail_post_adapter,
+            another_user_client,
+            detail_post_adapter,
             "Ensure that post page, snyatogo s post, "
             "dostupna tolko author etogo post.",
-            expected_status=HTTPStatus.NOT_FOUND)
+            expected_status=HTTPStatus.NOT_FOUND,
+        )
 
     with set_post_category_unpublished(detail_post_adapter):
         check_post_access(
-            user_client, detail_post_adapter,
+            user_client,
+            detail_post_adapter,
             "Ensure that post page, prinadlezhashchego category, "
             "snyatoi s post, dostupna author etogo post.",
-            expected_status=HTTPStatus.OK)
+            expected_status=HTTPStatus.OK,
+        )
         check_post_access(
-            another_user_client, detail_post_adapter,
+            another_user_client,
+            detail_post_adapter,
             "Ensure that post page, prinadlezhashchego category, "
             "snyatoi s post, "
             "dostupna tolko author etogo post.",
-            expected_status=HTTPStatus.NOT_FOUND)
+            expected_status=HTTPStatus.NOT_FOUND,
+        )
 
     with set_post_postponed(detail_post_adapter):
         check_post_access(
-            user_client, detail_post_adapter,
-            "Ensure that page otlozhennogo post "
-            "dostupna author.",
-            expected_status=HTTPStatus.OK)
+            user_client,
+            detail_post_adapter,
+            "Ensure that page otlozhennogo post " "dostupna author.",
+            expected_status=HTTPStatus.OK,
+        )
         check_post_access(
-            another_user_client, detail_post_adapter,
-            "Ensure that page otlozhennogo post "
-            "dostupna tolko author.",
-            expected_status=HTTPStatus.NOT_FOUND)
+            another_user_client,
+            detail_post_adapter,
+            "Ensure that page otlozhennogo post " "dostupna tolko author.",
+            expected_status=HTTPStatus.NOT_FOUND,
+        )
 
 
 def _test_create_items(
-        PostModel,
-        PostAdapter,
-        another_user_client,
-        create_a_post_get_response,
-        ctx_form,
-        published_category,
-        published_location,
-        unlogged_client,
-        user_client,
+    PostModel,
+    PostAdapter,
+    another_user_client,
+    create_a_post_get_response,
+    ctx_form,
+    published_category,
+    published_location,
+    unlogged_client,
+    user_client,
 ) -> Tuple[HttpResponse, List[ModelAdapterT]]:
     create_tester = CreatePostFormTester(
         create_a_post_get_response,
@@ -302,7 +328,7 @@ def _test_create_items(
         raise AssertionError(
             "Ensure that dlya validation"
             f" {create_tester.of_which_form} dostatochno zapolnit sleduyushchie"
-                f" polya: {list(forms_to_create[0].data.keys())}. Pri validation"
+            f" polya: {list(forms_to_create[0].data.keys())}. Pri validation"
             f" formy voznikli sleduyushchie errors: {e}"
         )
     response_on_created, created_items = create_tester.test_create_several(
@@ -310,23 +336,26 @@ def _test_create_items(
     )
     content = response_on_created.content.decode(encoding="utf8")
     redirected_to_profile = any(
-        [f'/profile/{PostAdapter(created_items[0]).author.username}' in x[0]
-         for x in response_on_created.redirect_chain])
+        [
+            f"/profile/{PostAdapter(created_items[0]).author.username}" in x[0]
+            for x in response_on_created.redirect_chain
+        ]
+    )
     assert response_on_created.redirect_chain and redirected_to_profile, (
-        'Ensure that pri sozdanii post '
-        'user is redirected to stranitsu svoego profile po '
-        'adresu `profile/<username>/`.'
+        "Ensure that pri sozdanii post "
+        "user is redirected to stranitsu svoego profile po "
+        "adresu `profile/<username>/`."
     )
     create_tester.test_creation_response(content, created_items)
     return response_on_created, created_items
 
 
 def _test_edit_post(
-        CommentModelAdapter,
-        another_user_client,
-        comment_to_a_post,
-        unlogged_client,
-        user_client,
+    CommentModelAdapter,
+    another_user_client,
+    comment_to_a_post,
+    unlogged_client,
+    user_client,
 ) -> Tuple[HttpResponse, KeyVal, KeyVal]:
     comment_adapter = CommentModelAdapter(comment_to_a_post)
     item_to_edit = comment_adapter.post
@@ -343,12 +372,9 @@ def _test_edit_post(
         ),
     )
     assert edit_url.key == f"/posts/{item_to_edit.id}/edit/", (
-        "Ensure that adres page edit post -"
-        " `post/<post_id>/edit/`."
+        "Ensure that adres page edit post -" " `post/<post_id>/edit/`."
     )
-    edit_url = KeyVal(
-        re.sub(r"\d+", str(item_to_edit.id), edit_url.key), edit_url.val
-    )
+    edit_url = KeyVal(re.sub(r"\d+", str(item_to_edit.id), edit_url.key), edit_url.val)
     image = PostFormTester.generate_files_dict()
     item_to_edit_adapter = PostModelAdapter(item_to_edit)
     old_prop_value = item_to_edit_adapter.displayed_field_name_or_value

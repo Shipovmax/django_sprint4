@@ -1,22 +1,19 @@
 from typing import Tuple, Union
 
 import bs4
-from django.db.models import QuerySet, Model
+from conftest import TitledUrlRepr
+from django.db.models import Model, QuerySet
 from django.forms import BaseForm
 from django.http import HttpResponse
-
-from conftest import TitledUrlRepr
 from fixtures.types import ModelAdapterT
 from form.base_form_tester import (
-    FormTagMissingException,
     FormMethodException,
-    TextareaMismatchException,
-    TextareaTagMissingException,
-)
-from form.base_form_tester import (
-    SubmitTester,
+    FormTagMissingException,
     FormValidationException,
     ItemCreatedException,
+    SubmitTester,
+    TextareaMismatchException,
+    TextareaTagMissingException,
 )
 from form.post.form_tester import PostFormTester
 
@@ -30,13 +27,9 @@ class CreatePostFormTester(PostFormTester):
         **kwargs,
     ):
         try:
-            super().__init__(
-                response, *args, ModelAdapter=ModelAdapter, **kwargs
-            )
+            super().__init__(response, *args, ModelAdapter=ModelAdapter, **kwargs)
         except FormTagMissingException as e:
-            raise AssertionError(
-                "Ensure that the create post form is provided."
-            ) from e
+            raise AssertionError("Ensure that the create post form is provided.") from e
 
     @property
     def textarea_tag(self) -> bs4.Tag:
@@ -44,21 +37,17 @@ class CreatePostFormTester(PostFormTester):
             return super().textarea_tag
         except TextareaTagMissingException as e:
             raise AssertionError(
-                "Ensure that v post create form est element"
-                " `textarea`."
+                "Ensure that v post create form est element" " `textarea`."
             ) from e
 
     def _validate(self):
         try:
             super()._validate()
         except FormTagMissingException as e:
-            raise AssertionError(
-                "Ensure that the create post form is provided."
-            ) from e
+            raise AssertionError("Ensure that the create post form is provided.") from e
         except FormMethodException as e:
             raise AssertionError(
-                "Ensure that the post create form is submitted using method"
-                " `POST`."
+                "Ensure that the post create form is submitted using method" " `POST`."
             ) from e
         except TextareaMismatchException as e:
             raise AssertionError(
@@ -77,13 +66,10 @@ class CreatePostFormTester(PostFormTester):
             return super().try_create_item(form, qs, submitter, assert_created)
         except FormValidationException as e:
             raise AssertionError(
-                "When creating post voznikaet error:\n"
-                f"{type(e).__name__}: {e}"
+                "When creating post voznikaet error:\n" f"{type(e).__name__}: {e}"
             ) from e
 
-    def test_unlogged_cannot_create(
-        self, form: BaseForm, qs: QuerySet
-    ) -> None:
+    def test_unlogged_cannot_create(self, form: BaseForm, qs: QuerySet) -> None:
         try:
             super().test_unlogged_cannot_create(form, qs)
         except ItemCreatedException as e:
@@ -96,9 +82,7 @@ class CreatePostFormTester(PostFormTester):
     def redirect_error_message(
         self, by_user: str, redirect_to_page: Union[TitledUrlRepr, str]
     ) -> str:
-        redirect_to_page_repr = self.get_redirect_to_page_repr(
-            redirect_to_page
-        )
+        redirect_to_page_repr = self.get_redirect_to_page_repr(redirect_to_page)
         return (
             f"Ensure that pri otpravke formy create post {by_user} on"
             f" is redirected to {redirect_to_page_repr}."
